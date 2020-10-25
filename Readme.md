@@ -1,3 +1,13 @@
-## Trillo
+# Trillo - Landing Page for Vallhala Hotel
 
-This is a flex-box project from JONAS Course
+Credit to **Jonas Schmedtmann**
+
+## Technologies
+
+- HTML
+- CSS
+- SASS
+
+## Features
+
+- Flex Box (CSS3)
