@@ -1,11 +1,12 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { theme } from "./theme";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello React Native.</Text>
-      <StatusBar style="auto" />
+      <View style={styles.item}>
+        <Text style={styles.text}>Coffee</Text>
+      </View>
     </View>
   );
 }
@@ -13,8 +14,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
     justifyContent: "center",
+    backgroundColor: theme.colorWhite,
+  },
+  item: {
+    paddingVertical: 16,
+    paddingHorizontal: 8,
+    borderBottomWidth: 1,
+    borderBottomColor: theme.colorCerulean,
+  },
+  text: {
+    fontSize: 18,
+    fontWeight: "200",
   },
 });
