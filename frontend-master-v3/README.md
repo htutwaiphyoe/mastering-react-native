@@ -41,3 +41,9 @@ Display Point => 1
 global theme file
 
 NativeWind for React Native Tailwind version
+
+button for Button, Pressable, TouchableOpacity
+
+never use Button due to un-customizable
+
+confirmation box => Alert
