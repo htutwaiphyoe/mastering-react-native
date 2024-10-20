@@ -5,15 +5,34 @@ import Button from "./Button";
 
 type Props = {
   name: string;
+  isCompleted?: boolean;
 };
 
-export default function ShoppingListItem({ name }: Props) {
+export default function ShoppingListItem({ name, isCompleted }: Props) {
   const { handleItemDelete } = useDelete();
 
   return (
-    <View style={styles.listItem}>
-      <Text style={styles.listItemText}>{name}</Text>
-      <Button onPress={() => handleItemDelete(name)}>Delete</Button>
+    <View
+      style={[
+        styles.listItem,
+        isCompleted ? styles.completedListItem : undefined,
+      ]}
+    >
+      <Text
+        style={[
+          styles.listItemText,
+          isCompleted ? styles.completedListItemText : undefined,
+        ]}
+      >
+        {name}
+      </Text>
+      <Button
+        disabled={isCompleted}
+        onPress={() => handleItemDelete(name)}
+        style={[isCompleted ? styles.completedButton : undefined]}
+      >
+        Delete
+      </Button>
     </View>
   );
 }
@@ -31,5 +50,17 @@ const styles = StyleSheet.create({
   listItemText: {
     fontSize: 18,
     fontWeight: "200",
+  },
+  completedListItem: {
+    backgroundColor: theme.colorLightGrey,
+    borderBottomColor: theme.colorLightGrey,
+  },
+  completedListItemText: {
+    color: theme.colorGrey,
+    textDecorationLine: "line-through",
+    textDecorationColor: theme.colorGrey,
+  },
+  completedButton: {
+    backgroundColor: theme.colorGrey,
   },
 });

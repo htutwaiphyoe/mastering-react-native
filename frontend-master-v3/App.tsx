@@ -5,7 +5,7 @@ import { theme } from "theme";
 export default function App() {
   return (
     <View style={styles.container}>
-      <ShoppingListItem name="AirPod 4" />
+      <ShoppingListItem name="AirPod 4" isCompleted />
       <ShoppingListItem name="Air Force 1" />
       <ShoppingListItem name="MacBook Pro 14" />
     </View>

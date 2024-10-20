@@ -51,3 +51,5 @@ confirmation box => Alert
 StyleSheet.absoluteFill
 
 StyleSheet.absoluteFillObject
+
+style={[styles.one, styles.two]}

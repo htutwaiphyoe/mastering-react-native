@@ -9,12 +9,13 @@ import { PropsWithChildren } from "react";
 
 type Props = PropsWithChildren<TouchableOpacityProps>;
 
-export default function Button({ onPress, children }: Props) {
+export default function Button({ onPress, style, children, ...props }: Props) {
   return (
     <TouchableOpacity
+      {...props}
       onPress={onPress}
       activeOpacity={0.8}
-      style={styles.button}
+      style={[styles.button, style]}
     >
       <Text style={styles.buttonText}>{children}</Text>
     </TouchableOpacity>
