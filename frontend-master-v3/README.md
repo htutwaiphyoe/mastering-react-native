@@ -53,3 +53,11 @@ StyleSheet.absoluteFill
 StyleSheet.absoluteFillObject
 
 style={[styles.one, styles.two]}
+
+SVG is not great way to use in native app, expensive to render
+
+preferred small PNGs
+
+npx expo install command ensures installing an SDK-compatible version of the library
+
+yarn install or npm install, which by default would install the latest version of that package

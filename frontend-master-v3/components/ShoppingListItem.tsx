@@ -1,7 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import { useDelete } from "hooks";
-import { theme } from "theme";
+import { globalStyles, theme } from "theme";
 import Button from "./Button";
+import { AntDesign } from "@expo/vector-icons";
+import Entypo from "@expo/vector-icons/Entypo";
 
 type Props = {
   name: string;
@@ -18,20 +20,32 @@ export default function ShoppingListItem({ name, isCompleted }: Props) {
         isCompleted ? styles.completedListItem : undefined,
       ]}
     >
-      <Text
-        style={[
-          styles.listItemText,
-          isCompleted ? styles.completedListItemText : undefined,
-        ]}
-      >
-        {name}
-      </Text>
+      <View style={globalStyles.row}>
+        <Entypo
+          size={24}
+          name={isCompleted ? "check" : "circle"}
+          color={isCompleted ? theme.colorGrey : theme.colorCerulean}
+        />
+        <Text
+          style={[
+            styles.listItemText,
+            isCompleted ? styles.completedListItemText : undefined,
+          ]}
+        >
+          {name}
+        </Text>
+      </View>
       <Button
+        hitSlop={20}
         disabled={isCompleted}
         onPress={() => handleItemDelete(name)}
         style={[isCompleted ? styles.completedButton : undefined]}
       >
-        Delete
+        <AntDesign
+          size={18}
+          name="close"
+          color={isCompleted ? theme.colorLightGrey : theme.colorWhite}
+        />
       </Button>
     </View>
   );
@@ -53,7 +67,7 @@ const styles = StyleSheet.create({
   },
   completedListItem: {
     backgroundColor: theme.colorLightGrey,
-    borderBottomColor: theme.colorLightGrey,
+    borderBottomColor: theme.colorGrey,
   },
   completedListItemText: {
     color: theme.colorGrey,
