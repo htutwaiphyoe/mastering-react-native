@@ -47,3 +47,7 @@ button for Button, Pressable, TouchableOpacity
 never use Button due to un-customizable
 
 confirmation box => Alert
+
+StyleSheet.absoluteFill
+
+StyleSheet.absoluteFillObject
