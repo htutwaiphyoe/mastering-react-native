@@ -79,3 +79,5 @@ There are 3 main ways to navigate between screens:
 1. Using the Link component
 2. Programmatically with the useRouter hook
 3. Using the built-in header and bottom tabs button
+
+hipSlop => pressable area
