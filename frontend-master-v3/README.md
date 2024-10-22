@@ -71,3 +71,11 @@ npx expo install expo-router react-native-safe-area-context react-native-screens
 ```
 
 the screens and layouts have a default export
+
+Displaying screens in a Stack is the default way to navigate. It means that when you navigate to a new screen, it is rendered on top of the current screen, so you can goBack() to the previous screen to go back.
+
+There are 3 main ways to navigate between screens:
+
+1. Using the Link component
+2. Programmatically with the useRouter hook
+3. Using the built-in header and bottom tabs button
