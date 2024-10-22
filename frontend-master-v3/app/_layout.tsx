@@ -1,25 +1,33 @@
-import { Stack } from "expo-router";
+import { Tabs } from "expo-router";
+import Feather from "@expo/vector-icons/Feather";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import { theme } from "theme";
 
 export default function Layout() {
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ title: "Shopping  List" }} />
-      <Stack.Screen
+    <Tabs screenOptions={{ tabBarActiveTintColor: theme.colorCerulean }}>
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Shopping  List",
+          tabBarIcon: (props) => <Feather name="list" {...props} />,
+        }}
+      />
+      <Tabs.Screen
         name="counter"
         options={{
           title: "Counter",
-          presentation: "modal",
-          animation: "fade_from_bottom",
+          tabBarIcon: (props) => <AntDesign name="clockcircleo" {...props} />,
         }}
       />
-      <Stack.Screen
+      <Tabs.Screen
         name="idea"
         options={{
           title: "Idea",
-          presentation: "modal",
-          animation: "fade_from_bottom",
+          tabBarIcon: (props) => <FontAwesome5 name="lightbulb" {...props} />,
         }}
       />
-    </Stack>
+    </Tabs>
   );
 }
