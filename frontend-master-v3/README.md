@@ -61,3 +61,13 @@ preferred small PNGs
 npx expo install command ensures installing an SDK-compatible version of the library
 
 yarn install or npm install, which by default would install the latest version of that package
+
+[expo router](https://docs.expo.dev/router/introduction/)
+
+[reactnavigation](https://reactnavigation.org/docs/getting-started)
+
+```bash
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+```
+
+the screens and layouts have a default export
