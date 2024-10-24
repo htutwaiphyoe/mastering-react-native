@@ -18,3 +18,11 @@ export const setStorage = async (key: string, value: object) => {
     console.error("Error setting data to storage", e);
   }
 };
+
+export const clearStorage = async (key: string) => {
+  try {
+    await AsyncStorage.removeItem(key);
+  } catch (e: unknown) {
+    console.error("Error clearing data from storage", e);
+  }
+};
