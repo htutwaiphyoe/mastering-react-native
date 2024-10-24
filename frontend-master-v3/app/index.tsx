@@ -2,7 +2,7 @@ import { useState } from "react";
 import { theme } from "theme";
 import { getUniqueId } from "utils";
 import { initialShoppingList } from "constant";
-import { StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, TextInput, ScrollView, View, Text } from "react-native";
 import ShoppingListItem from "components/ShoppingListItem";
 import type { TShoppingListItem } from "types";
 import { useDelete } from "hooks";
@@ -16,8 +16,8 @@ export default function App() {
   const onSubmit = () => {
     if (item) {
       setShoppingList((shoppingList) => [
-        ...shoppingList,
         { id: getUniqueId(), name: item, isCompleted: false },
+        ...shoppingList,
       ]);
       setItem("");
     }
@@ -36,37 +36,59 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
-      <TextInput
-        value={item}
-        returnKeyType="done"
-        onChangeText={setItem}
-        style={styles.textInput}
-        onSubmitEditing={onSubmit}
-        placeholder="Eg. Lamborghini"
-      />
-      {shoppingList.map((shoppingListItem) => (
-        <ShoppingListItem
-          onDelete={onDelete}
-          item={shoppingListItem}
-          key={shoppingListItem.id}
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
+      stickyHeaderIndices={[0]}
+    >
+      <View style={styles.textInputContainer}>
+        <TextInput
+          value={item}
+          returnKeyType="done"
+          onChangeText={setItem}
+          style={styles.textInput}
+          onSubmitEditing={onSubmit}
+          placeholder="Eg. Lamborghini"
         />
-      ))}
-    </View>
+      </View>
+      <View>
+        {shoppingList.length > 0 ? (
+          shoppingList.map((shoppingListItem) => (
+            <ShoppingListItem
+              onDelete={onDelete}
+              item={shoppingListItem}
+              key={shoppingListItem.id}
+            />
+          ))
+        ) : (
+          <Text style={styles.emptyText}>No item in the shopping list.</Text>
+        )}
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 12,
+    backgroundColor: theme.colorWhite,
+  },
+  contentContainer: {
+    paddingBottom: 24,
+  },
+  emptyText: {
+    fontSize: 18,
+    padding: 20,
+    textAlign: "center",
+  },
+  textInputContainer: {
+    paddingVertical: 18,
     backgroundColor: theme.colorWhite,
   },
   textInput: {
     fontSize: 18,
     borderWidth: 2,
     borderRadius: 30,
-    marginBottom: 12,
     paddingVertical: 12,
     marginHorizontal: 12,
     paddingHorizontal: 20,

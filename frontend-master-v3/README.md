@@ -85,3 +85,5 @@ hipSlop => pressable area
 there is no form component in React Native, the inputs are all handled individually.
 
 onChangeText, keyboardType, onSubmitEditing,  returnKeyType prop
+
+Views in native don't scroll by default. Even if we add so many items they're longer than the screen, they will just disappear off the screen. To make a page scrollable, use ScrollView
