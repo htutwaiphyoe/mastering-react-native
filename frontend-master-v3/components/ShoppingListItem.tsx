@@ -1,5 +1,4 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { useDelete } from "hooks";
 import { globalStyles, theme } from "theme";
 import Button from "./Button";
 import { AntDesign } from "@expo/vector-icons";
@@ -32,6 +31,7 @@ export default function ShoppingListItem({
           color={item.completedAt ? theme.colorGrey : theme.colorCerulean}
         />
         <Text
+          numberOfLines={2}
           style={[
             styles.listItemText,
             item.completedAt ? styles.completedListItemText : undefined,
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     borderBottomColor: theme.colorCerulean,
   },
   listItemText: {
+    flex: 1,
     fontSize: 18,
     fontWeight: "200",
   },
