@@ -116,3 +116,7 @@ Make sure you background the app. The notification will not appear in the notifi
 foreground and background notifications
 
 Activity Indicator
+
+npx expo install react-native-confetti-cannon
+
+useWindowDimensions => can handle screen size change

@@ -55,17 +55,17 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   listEmptyContainer: {
-    justifyContent: "center",
-    alignItems: "center",
     marginVertical: 18,
+    alignItems: "center",
+    justifyContent: "center",
   },
   listItem: {
-    marginHorizontal: 8,
-    marginBottom: 8,
-    alignItems: "center",
-    backgroundColor: theme.colorLightGrey,
     padding: 12,
     borderRadius: 6,
+    marginBottom: 8,
+    marginHorizontal: 8,
+    alignItems: "center",
+    backgroundColor: theme.colorLightGrey,
   },
   listItemText: {
     fontSize: 18,

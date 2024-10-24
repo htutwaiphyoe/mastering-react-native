@@ -1,8 +1,7 @@
+import { theme } from "theme";
 import { Tabs } from "expo-router";
 import Feather from "@expo/vector-icons/Feather";
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import { theme } from "theme";
 
 export default function Layout() {
   return (
@@ -20,13 +19,6 @@ export default function Layout() {
           title: "Counter",
           headerShown: false,
           tabBarIcon: (props) => <AntDesign name="clockcircleo" {...props} />,
-        }}
-      />
-      <Tabs.Screen
-        name="idea"
-        options={{
-          title: "Idea",
-          tabBarIcon: (props) => <FontAwesome5 name="lightbulb" {...props} />,
         }}
       />
     </Tabs>
