@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { theme } from "theme";
 import { getUniqueId, orderShoppingList } from "utils";
-import { StyleSheet, TextInput, Text, FlatList } from "react-native";
+import {
+  Text,
+  FlatList,
+  TextInput,
+  StyleSheet,
+  LayoutAnimation,
+} from "react-native";
 import ShoppingListItem from "components/ShoppingListItem";
 import type { TShoppingListItem } from "types";
 import { useDelete } from "hooks";
@@ -51,6 +57,7 @@ const useContainer = () => {
 
   const getShoppingList = async () => {
     const data = await getStorage(SHOPPING_STORAGE_KEY);
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setShoppingList(data ?? []);
   };
 
@@ -70,6 +77,7 @@ const useContainer = () => {
           },
           ...shoppingList,
         ];
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
         setStorage(SHOPPING_STORAGE_KEY, newShoppingList);
         return newShoppingList;
       });
@@ -80,14 +88,16 @@ const useContainer = () => {
   const onDelete = (item: TShoppingListItem) => {
     onItemDelete({
       name: item.name,
-      onDelete: () =>
+      onDelete: () => {
         setShoppingList((shoppingList) => {
           const newShoppingList = shoppingList.filter(
             (shoppingListItem) => shoppingListItem.id !== item.id
           );
+          LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
           setStorage(SHOPPING_STORAGE_KEY, newShoppingList);
           return newShoppingList;
-        }),
+        });
+      },
     });
   };
 
@@ -102,6 +112,7 @@ const useContainer = () => {
             }
           : shoppingListItem
       );
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
       setStorage(SHOPPING_STORAGE_KEY, newShoppingList);
       return newShoppingList;
     });

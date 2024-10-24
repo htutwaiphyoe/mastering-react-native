@@ -99,3 +99,7 @@ device's storage
 [async-storage](https://react-native-async-storage.github.io/async-storage/docs/usage/)
 
 similar to localStorage on the web
+
+Import LayoutAnimation and call configureNext just before every time we do a state update that changes a list item.
+
+[react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/)
