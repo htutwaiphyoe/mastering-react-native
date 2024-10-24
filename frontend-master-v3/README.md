@@ -81,3 +81,7 @@ There are 3 main ways to navigate between screens:
 3. Using the built-in header and bottom tabs button
 
 hipSlop => pressable area
+
+there is no form component in React Native, the inputs are all handled individually.
+
+onChangeText, keyboardType, onSubmitEditing,  returnKeyType prop

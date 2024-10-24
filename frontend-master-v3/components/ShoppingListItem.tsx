@@ -4,47 +4,46 @@ import { globalStyles, theme } from "theme";
 import Button from "./Button";
 import { AntDesign } from "@expo/vector-icons";
 import Entypo from "@expo/vector-icons/Entypo";
+import { TShoppingListItem } from "types";
 
 type Props = {
-  name: string;
-  isCompleted?: boolean;
+  item: TShoppingListItem;
+  onDelete: (item: TShoppingListItem) => void;
 };
 
-export default function ShoppingListItem({ name, isCompleted }: Props) {
-  const { handleItemDelete } = useDelete();
-
+export default function ShoppingListItem({ item, onDelete }: Props) {
   return (
     <View
       style={[
         styles.listItem,
-        isCompleted ? styles.completedListItem : undefined,
+        item.isCompleted ? styles.completedListItem : undefined,
       ]}
     >
       <View style={globalStyles.row}>
         <Entypo
           size={24}
-          name={isCompleted ? "check" : "circle"}
-          color={isCompleted ? theme.colorGrey : theme.colorCerulean}
+          name={item.isCompleted ? "check" : "circle"}
+          color={item.isCompleted ? theme.colorGrey : theme.colorCerulean}
         />
         <Text
           style={[
             styles.listItemText,
-            isCompleted ? styles.completedListItemText : undefined,
+            item.isCompleted ? styles.completedListItemText : undefined,
           ]}
         >
-          {name}
+          {item.name}
         </Text>
       </View>
       <Button
         hitSlop={20}
-        disabled={isCompleted}
-        onPress={() => handleItemDelete(name)}
-        style={[isCompleted ? styles.completedButton : undefined]}
+        disabled={item.isCompleted}
+        onPress={() => onDelete(item)}
+        style={[item.isCompleted ? styles.completedButton : undefined]}
       >
         <AntDesign
           size={18}
           name="close"
-          color={isCompleted ? theme.colorLightGrey : theme.colorWhite}
+          color={item.isCompleted ? theme.colorLightGrey : theme.colorWhite}
         />
       </Button>
     </View>

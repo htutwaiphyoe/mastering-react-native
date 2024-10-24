@@ -1,7 +1,13 @@
 import { Alert } from "react-native";
 
 export const useDelete = () => {
-  const handleItemDelete = (name: string) => {
+  const onItemDelete = ({
+    name,
+    onDelete,
+  }: {
+    name: string;
+    onDelete: () => void;
+  }) => {
     Alert.alert(
       `Are you sure you want to delete ${name}?`,
       "This will delete a item",
@@ -12,13 +18,13 @@ export const useDelete = () => {
         },
         {
           text: "Yes",
+          onPress: onDelete,
           style: "destructive",
-          onPress: () => console.log("Deleted"),
         },
       ]
     );
   };
   return {
-    handleItemDelete,
+    onItemDelete,
   };
 };
