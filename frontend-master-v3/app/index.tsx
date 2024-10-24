@@ -2,12 +2,47 @@ import { useState } from "react";
 import { theme } from "theme";
 import { getUniqueId } from "utils";
 import { initialShoppingList } from "constant";
-import { StyleSheet, TextInput, ScrollView, View, Text } from "react-native";
+import { StyleSheet, TextInput, Text, FlatList } from "react-native";
 import ShoppingListItem from "components/ShoppingListItem";
 import type { TShoppingListItem } from "types";
 import { useDelete } from "hooks";
 
 export default function App() {
+  const { item, onToggleComplete, onDelete, onSubmit, setItem, shoppingList } =
+    useContainer();
+
+  return (
+    <FlatList<TShoppingListItem>
+      data={shoppingList}
+      style={styles.container}
+      stickyHeaderIndices={[0]}
+      contentContainerStyle={styles.contentContainer}
+      ListHeaderComponentStyle={styles.textInputContainer}
+      renderItem={({ item }) => (
+        <ShoppingListItem
+          item={item}
+          onDelete={onDelete}
+          onComplete={onToggleComplete}
+        />
+      )}
+      ListEmptyComponent={
+        <Text style={styles.emptyText}>No item in the shopping list.</Text>
+      }
+      ListHeaderComponent={
+        <TextInput
+          value={item}
+          returnKeyType="done"
+          onChangeText={setItem}
+          style={styles.textInput}
+          onSubmitEditing={onSubmit}
+          placeholder="Eg. Lamborghini"
+        />
+      }
+    />
+  );
+}
+
+const useContainer = () => {
   const [shoppingList, setShoppingList] =
     useState<TShoppingListItem[]>(initialShoppingList);
   const [item, setItem] = useState<string>("");
@@ -16,7 +51,7 @@ export default function App() {
   const onSubmit = () => {
     if (item) {
       setShoppingList((shoppingList) => [
-        { id: getUniqueId(), name: item, isCompleted: false },
+        { id: getUniqueId(), name: item, completedAt: null },
         ...shoppingList,
       ]);
       setItem("");
@@ -35,38 +70,28 @@ export default function App() {
     });
   };
 
-  return (
-    <ScrollView
-      style={styles.container}
-      contentContainerStyle={styles.contentContainer}
-      stickyHeaderIndices={[0]}
-    >
-      <View style={styles.textInputContainer}>
-        <TextInput
-          value={item}
-          returnKeyType="done"
-          onChangeText={setItem}
-          style={styles.textInput}
-          onSubmitEditing={onSubmit}
-          placeholder="Eg. Lamborghini"
-        />
-      </View>
-      <View>
-        {shoppingList.length > 0 ? (
-          shoppingList.map((shoppingListItem) => (
-            <ShoppingListItem
-              onDelete={onDelete}
-              item={shoppingListItem}
-              key={shoppingListItem.id}
-            />
-          ))
-        ) : (
-          <Text style={styles.emptyText}>No item in the shopping list.</Text>
-        )}
-      </View>
-    </ScrollView>
-  );
-}
+  const onToggleComplete = (item: TShoppingListItem) => {
+    setShoppingList((shoppingList) =>
+      shoppingList.map((shoppingListItem) =>
+        shoppingListItem.id === item.id
+          ? {
+              ...shoppingListItem,
+              completedAt: shoppingListItem.completedAt ? null : Date.now(),
+            }
+          : shoppingListItem
+      )
+    );
+  };
+
+  return {
+    item,
+    setItem,
+    onSubmit,
+    onDelete,
+    shoppingList,
+    onToggleComplete,
+  };
+};
 
 const styles = StyleSheet.create({
   container: {

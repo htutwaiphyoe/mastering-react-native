@@ -2,8 +2,8 @@ import type { TShoppingListItem } from "types";
 import { getUniqueId } from "utils";
 
 export const initialShoppingList: TShoppingListItem[] = [
-  { id: getUniqueId(), name: "MacBook Pro 14", isCompleted: true },
-  { id: getUniqueId(), name: "Air Force 1", isCompleted: true },
-  { id: getUniqueId(), name: "AirPod 4", isCompleted: true },
-  { id: getUniqueId(), name: "Iphone 16", isCompleted: false },
+  { id: getUniqueId(), name: "MacBook Pro 14", completedAt: Date.now() },
+  { id: getUniqueId(), name: "Air Force 1", completedAt: Date.now() },
+  { id: getUniqueId(), name: "AirPod 4", completedAt: Date.now() },
+  { id: getUniqueId(), name: "Iphone 16", completedAt: null },
 ];

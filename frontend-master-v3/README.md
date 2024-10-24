@@ -87,3 +87,5 @@ there is no form component in React Native, the inputs are all handled individua
 onChangeText, keyboardType, onSubmitEditing,  returnKeyType prop
 
 Views in native don't scroll by default. Even if we add so many items they're longer than the screen, they will just disappear off the screen. To make a page scrollable, use ScrollView
+
+FlatList is more feature-rich, with built-in pull-to-refresh, scroll-to-index, header and footer support, the most important feature is that it is optimized for rendering large lists. In particular it does not render the components that are nowhere near being seen on your screen.
