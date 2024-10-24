@@ -12,6 +12,7 @@ import ShoppingListItem from "components/ShoppingListItem";
 import type { TShoppingListItem } from "types";
 import { useDelete } from "hooks";
 import { getStorage, setStorage, SHOPPING_STORAGE_KEY } from "utils/storage";
+import * as Haptics from "expo-haptics";
 
 export default function App() {
   const { item, onToggleComplete, onDelete, onSubmit, setItem, shoppingList } =
@@ -94,6 +95,7 @@ const useContainer = () => {
             (shoppingListItem) => shoppingListItem.id !== item.id
           );
           LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
           setStorage(SHOPPING_STORAGE_KEY, newShoppingList);
           return newShoppingList;
         });
@@ -103,15 +105,21 @@ const useContainer = () => {
 
   const onToggleComplete = (item: TShoppingListItem) => {
     setShoppingList((shoppingList) => {
-      const newShoppingList = shoppingList.map((shoppingListItem) =>
-        shoppingListItem.id === item.id
-          ? {
-              ...shoppingListItem,
-              updatedAt: Date.now(),
-              completedAt: shoppingListItem.completedAt ? null : Date.now(),
-            }
-          : shoppingListItem
-      );
+      const newShoppingList = shoppingList.map((shoppingListItem) => {
+        if (shoppingListItem.id === item.id) {
+          if (shoppingListItem.completedAt) {
+            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+          } else {
+            Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+          }
+          return {
+            ...shoppingListItem,
+            updatedAt: Date.now(),
+            completedAt: shoppingListItem.completedAt ? null : Date.now(),
+          };
+        }
+        return shoppingListItem;
+      });
       LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
       setStorage(SHOPPING_STORAGE_KEY, newShoppingList);
       return newShoppingList;

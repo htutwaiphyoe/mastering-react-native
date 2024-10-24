@@ -1,4 +1,5 @@
 import { Alert } from "react-native";
+import * as Haptics from "expo-haptics";
 
 export const useDelete = () => {
   const onItemDelete = ({
@@ -8,6 +9,7 @@ export const useDelete = () => {
     name: string;
     onDelete: () => void;
   }) => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     Alert.alert(
       `Are you sure you want to delete ${name}?`,
       "This will delete a item",

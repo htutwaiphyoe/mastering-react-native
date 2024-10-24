@@ -103,3 +103,5 @@ similar to localStorage on the web
 Import LayoutAnimation and call configureNext just before every time we do a state update that changes a list item.
 
 [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/)
+
+Haptic feedback is the little vibration the phone makes in response to certain actions. Using it in the right place at the right time improves the experience of using app. The expo-haptics library has several built-in types of vibration from light to heavy.
