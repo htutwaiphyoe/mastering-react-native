@@ -1,18 +1,26 @@
 import { theme } from "theme";
-import { COUNTDOWN_STORAGE_KEY, interval } from "constant";
 import * as Device from "expo-device";
 import Button from "components/Button";
 import { useEffect, useState } from "react";
 import * as Notifications from "expo-notifications";
 import { TimeSegment } from "components/TimeSegment";
-import { Alert, StyleSheet, Text, View } from "react-native";
-import { registerPushNotifications } from "utils/notification";
-import { intervalToDuration, isBefore } from "date-fns";
-import { TCountdownStatus, TPersistCountdownState } from "types";
 import { getStorage, setStorage } from "utils/storage";
+import { intervalToDuration, isBefore } from "date-fns";
+import { COUNTDOWN_STORAGE_KEY, interval } from "constant";
+import { ActivityIndicator, Alert, StyleSheet, Text, View } from "react-native";
+import { registerPushNotifications } from "utils/notification";
+import { TCountdownStatus, TPersistCountdownState } from "types";
 
 export default function Counter() {
-  const { scheduleNotifications, status } = useContainer();
+  const { scheduleNotifications, status, isLoading } = useContainer();
+
+  if (isLoading) {
+    return (
+      <View style={styles.activityIndicator}>
+        <ActivityIndicator />
+      </View>
+    );
+  }
 
   return (
     <View
@@ -56,6 +64,7 @@ export default function Counter() {
 }
 
 const useContainer = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [countDown, setCountDown] = useState<TPersistCountdownState>();
   const [status, setStatus] = useState<TCountdownStatus>({
     isOverdue: false,
@@ -63,6 +72,7 @@ const useContainer = () => {
   });
 
   useEffect(() => {
+    setIsLoading(true);
     const initCountdown = async () => {
       const data = await getStorage(COUNTDOWN_STORAGE_KEY);
       setCountDown(data);
@@ -84,6 +94,7 @@ const useContainer = () => {
           : { start: Date.now(), end: timestamp }
       );
       setStatus({ isOverdue, distance });
+      setIsLoading(false);
     }, 1000);
 
     return () => {
@@ -131,6 +142,7 @@ const useContainer = () => {
 
   return {
     status,
+    isLoading,
     scheduleNotifications,
   };
 };
@@ -168,5 +180,11 @@ const styles = StyleSheet.create({
   },
   whiteText: {
     color: theme.colorWhite,
+  },
+  activityIndicator: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: theme.colorWhite,
   },
 });
