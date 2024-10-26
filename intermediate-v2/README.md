@@ -13,7 +13,7 @@ npx expo lint
 yarn add -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react-native
 
 ```js
-module.exports = {
+module.exports = { 
   extends: ["expo", "prettier"],
   plugins: ["prettier", "react-native"],
   rules: {
@@ -24,3 +24,5 @@ module.exports = {
 ```
 
 yarn lint --fix
+
+A scheme is similar to a url. The reason this is required is because expo router comes with deep linking built in. be unique
