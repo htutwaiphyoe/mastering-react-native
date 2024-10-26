@@ -1,12 +1,10 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { theme } from "../theme";
 
-export default function HomeScreen() {
+export default function ProfileScreen() {
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.text}>Profile</Text>
     </View>
   );
 }
@@ -17,5 +15,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: theme.color.white,
+  },
+  text: {
+    fontSize: 24,
   },
 });

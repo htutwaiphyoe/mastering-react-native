@@ -26,3 +26,11 @@ module.exports = {
 yarn lint --fix
 
 A scheme is similar to a url. The reason this is required is because expo router comes with deep linking built in. be unique
+
+```bash
+npx expo install @expo/vector-icons
+```
+
+[expo icon](https://icons.expo.fyi/Index)
+
+tabBarIcon, tabBarLabel, tabBarShowLabel, focused for tabBar active
