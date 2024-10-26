@@ -34,3 +34,12 @@ npx expo install @expo/vector-icons
 [expo icon](https://icons.expo.fyi/Index)
 
 tabBarIcon, tabBarLabel, tabBarShowLabel, focused for tabBar active
+
+path alias
+
+```bash
+"baseUrl": ".",
+"paths": {
+  "@/*": ["./*"]
+}
+```
