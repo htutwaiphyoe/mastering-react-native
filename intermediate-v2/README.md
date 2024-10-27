@@ -84,3 +84,9 @@ style={(state) => {
       return styles.button;
     }}
 ```
+
+A linear gradient is an image consisting of a progressive transition between two or more colors along a straight line.
+
+```bash
+npx expo install expo-linear-gradient
+```

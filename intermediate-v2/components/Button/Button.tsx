@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.color.green,
   },
   buttonPressed: {
-    backgroundColor: theme.color.colorLeafyGreen,
+    backgroundColor: theme.color.leafyGreen,
   },
   text: {
     fontSize: 18,
