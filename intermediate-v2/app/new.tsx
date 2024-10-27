@@ -4,15 +4,30 @@ import { useRouter } from "expo-router";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input/Input";
 import { usePlantStore } from "@/store/plantStore";
-import { Alert, StyleSheet, View } from "react-native";
+import { Alert, Platform, StyleSheet, TouchableOpacity } from "react-native";
 import { PlantlyImage } from "@/components/PlantlyImage";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import * as ImagePicker from "expo-image-picker";
 
 export default function NewScreen() {
   const router = useRouter();
   const [name, setName] = useState<string>("");
   const [days, setDays] = useState<string>("");
+  const [imageUri, setImageUri] = useState<string>("");
   const addPlant = usePlantStore((state) => state.addPlant);
+
+  const onImageChange = async () => {
+    if (Platform.OS === "web") return;
+
+    const result = await ImagePicker.launchImageLibraryAsync({
+      quality: 1,
+      aspect: [1, 1],
+      allowsEditing: true,
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+    });
+
+    if (!result.canceled) setImageUri(result.assets[0].uri);
+  };
 
   const onSubmit = () => {
     if (!name) {
@@ -32,7 +47,11 @@ export default function NewScreen() {
       );
     }
 
-    addPlant(name, Number(days));
+    addPlant({
+      name,
+      imageUri,
+      wateringFrequencyDays: Number(days),
+    });
     router.navigate("/");
   };
 
@@ -42,9 +61,13 @@ export default function NewScreen() {
       keyboardShouldPersistTaps="handled"
       contentContainerStyle={styles.content}
     >
-      <View style={styles.image}>
-        <PlantlyImage />
-      </View>
+      <TouchableOpacity
+        activeOpacity={0.8}
+        style={styles.image}
+        onPress={onImageChange}
+      >
+        <PlantlyImage imageUri={imageUri} />
+      </TouchableOpacity>
       <Input
         label="Name"
         value={name}

@@ -2,7 +2,6 @@ import { theme } from "@/theme";
 import { Plant } from "@/types";
 import { StyleSheet, Text, View } from "react-native";
 import { PlantlyImage } from "@/components/PlantlyImage";
-import { Button } from "../Button";
 
 type PlantCardProps = {
   plant: Plant;
@@ -11,7 +10,7 @@ type PlantCardProps = {
 export function PlantCard({ plant }: PlantCardProps) {
   return (
     <View style={styles.card}>
-      <PlantlyImage size={100} />
+      <PlantlyImage size={100} imageUri={plant.imageUri} />
       <View style={styles.content}>
         <Text style={styles.title}>{plant.name}</Text>
         <Text style={styles.subtitle}>
@@ -24,16 +23,16 @@ export function PlantCard({ plant }: PlantCardProps) {
 
 const styles = StyleSheet.create({
   card: {
-    padding: 12,
+    padding: 16,
     elevation: 1,
+    columnGap: 10,
     borderRadius: 12,
-    marginBottom: 12,
     flexDirection: "row",
     shadowColor: theme.color.black,
     backgroundColor: theme.color.white,
   },
   content: {
-    rowGap: 4,
+    rowGap: 8,
     padding: 14,
     justifyContent: "center",
   },

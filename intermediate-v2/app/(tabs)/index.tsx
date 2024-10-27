@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.color.lightGrey,
   },
   content: {
+    rowGap: 16,
     padding: 20,
   },
   empty: {
