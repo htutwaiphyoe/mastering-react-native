@@ -22,7 +22,7 @@ export default function Layout() {
           tabBarIcon: (props) => <Entypo name="leaf" {...props} />,
           headerRight: () => (
             <Link href="/new" asChild>
-              <Pressable hitSlop={80} style={{ marginRight: 24 }}>
+              <Pressable hitSlop={80} style={{ marginRight: 20 }}>
                 <AntDesign
                   size={24}
                   name="pluscircleo"
