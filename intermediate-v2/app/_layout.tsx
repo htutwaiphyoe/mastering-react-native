@@ -1,25 +1,23 @@
-import { theme } from "@/theme";
-import { Tabs } from "expo-router";
-import Entypo from "@expo/vector-icons/Entypo";
-import Feather from "@expo/vector-icons/Feather";
+import { Stack } from "expo-router";
 
 export default function Layout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: theme.color.green }}>
-      <Tabs.Screen
-        name="index"
+    <Stack>
+      <Stack.Screen
+        name="onboarding"
         options={{
-          title: "Home",
-          tabBarIcon: (props) => <Entypo name="leaf" {...props} />,
+          headerShown: false,
+          animation: "slide_from_right",
         }}
       />
-      <Tabs.Screen
-        name="profile"
+      <Stack.Screen
+        name="(tabs)"
         options={{
-          title: "Profile",
-          tabBarIcon: (props) => <Feather name="user" {...props} />,
+          headerShown: false,
+          presentation: "modal",
+          animation: "slide_from_right",
         }}
       />
-    </Tabs>
+    </Stack>
   );
 }

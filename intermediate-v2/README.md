@@ -43,3 +43,7 @@ path alias
   "@/*": ["./*"]
 }
 ```
+
+Layout groups (), don't show up as part of the route.
+
+screen animation

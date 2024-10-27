@@ -1,10 +1,15 @@
 import { theme } from "@/theme";
-import { StyleSheet, Text, View } from "react-native";
+import { useOnboarding } from "@/hooks";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function ProfileScreen() {
+  const { backToOnboarding } = useOnboarding();
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Profile</Text>
+      <Pressable onPress={backToOnboarding}>
+        <Text style={styles.text}>Back to onboarding</Text>
+      </Pressable>
     </View>
   );
 }
