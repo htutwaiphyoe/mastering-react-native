@@ -47,3 +47,23 @@ path alias
 Layout groups (), don't show up as part of the route.
 
 screen animation
+
+npx expo install @react-native-async-storage/async-storage
+
+zustand + async storage
+
+```ts
+export const useUserStore = create(
+  persist<UserState>(
+    (set) => ({
+      isOnBoarded: false,
+      setIsOnBoarded: (isOnBoarded: boolean) =>
+        set((state) => ({ ...state, isOnBoarded })),
+    }),
+    {
+      name: "user-storage",
+      storage: createJSONStorage(() => AsyncStorage),
+    }
+  )
+);
+```
