@@ -1,11 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
-type UserState = {
-  isOnBoarded: boolean;
-  setIsOnBoarded: (isOnBoarded: boolean) => void;
-};
+import { UserState } from "@/types";
 
 export const useUserStore = create(
   persist<UserState>(

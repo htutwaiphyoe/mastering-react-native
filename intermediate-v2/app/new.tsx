@@ -1,14 +1,18 @@
 import { theme } from "@/theme";
+import { useState } from "react";
+import { useRouter } from "expo-router";
 import { Button } from "@/components/Button";
-import { Alert, StyleSheet, View } from "react-native";
 import { Input } from "@/components/Input/Input";
+import { usePlantStore } from "@/store/plantStore";
+import { Alert, StyleSheet, View } from "react-native";
 import { PlantlyImage } from "@/components/PlantlyImage";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { useState } from "react";
 
 export default function NewScreen() {
+  const router = useRouter();
   const [name, setName] = useState<string>("");
   const [days, setDays] = useState<string>("");
+  const addPlant = usePlantStore((state) => state.addPlant);
 
   const onSubmit = () => {
     if (!name) {
@@ -28,7 +32,8 @@ export default function NewScreen() {
       );
     }
 
-    Alert.alert("Success", "Plant added successfully");
+    addPlant(name, Number(days));
+    router.navigate("/");
   };
 
   return (
@@ -67,7 +72,7 @@ const styles = StyleSheet.create({
   content: {
     rowGap: 20,
     paddingTop: 24,
-    paddingBottom: 100,
+    paddingBottom: 50,
     paddingHorizontal: 24,
   },
   image: {

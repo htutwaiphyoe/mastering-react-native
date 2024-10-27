@@ -1,10 +1,9 @@
 import { theme } from "@/theme";
 import { useOnboarding } from "@/hooks";
 import { Pressable } from "react-native";
-import Entypo from "@expo/vector-icons/Entypo";
-import { AntDesign } from "@expo/vector-icons";
 import Feather from "@expo/vector-icons/Feather";
 import { Link, Redirect, Tabs } from "expo-router";
+import Entypo from "@expo/vector-icons/Entypo";
 
 export default function Layout() {
   const { isOnBoarded } = useOnboarding();
@@ -22,10 +21,10 @@ export default function Layout() {
           tabBarIcon: (props) => <Entypo name="leaf" {...props} />,
           headerRight: () => (
             <Link href="/new" asChild>
-              <Pressable hitSlop={80} style={{ marginRight: 20 }}>
-                <AntDesign
+              <Pressable hitSlop={80} style={{ marginRight: 24 }}>
+                <Entypo
                   size={24}
-                  name="pluscircleo"
+                  name="add-to-list"
                   color={theme.color.green}
                 />
               </Pressable>
