@@ -40,9 +40,9 @@ export function Button({ title, onPress, ...props }: ButtonProps) {
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 8,
-    paddingVertical: 14,
-    paddingHorizontal: 18,
+    borderRadius: 100,
+    paddingVertical: 16,
+    paddingHorizontal: 28,
     backgroundColor: theme.color.green,
   },
   buttonPressed: {
