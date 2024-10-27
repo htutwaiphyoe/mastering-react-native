@@ -67,3 +67,20 @@ export const useUserStore = create(
   )
 );
 ```
+
+haptic feedback - a little vibration - when pressed
+
+```bash
+npx expo install expo-haptics
+```
+
+style onPress
+
+```ts
+style={(state) => {
+      if (state.pressed) {
+        return [styles.button, styles.buttonPressed];
+      }
+      return styles.button;
+    }}
+```

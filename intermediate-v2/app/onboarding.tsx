@@ -1,15 +1,14 @@
 import { theme } from "@/theme";
 import { useOnboarding } from "@/hooks";
-import { Pressable, StyleSheet, View, Text } from "react-native";
+import { Button } from "@/components/Button";
+import { StyleSheet, View } from "react-native";
 
 export default function OnboardingScreen() {
   const { finishOnboarding } = useOnboarding();
 
   return (
     <View style={styles.container}>
-      <Pressable onPress={finishOnboarding}>
-        <Text style={styles.text}>Let's get started!</Text>
-      </Pressable>
+      <Button onPress={finishOnboarding} title="Let's get started!" />
     </View>
   );
 }
@@ -20,8 +19,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: theme.color.white,
-  },
-  text: {
-    fontSize: 24,
   },
 });

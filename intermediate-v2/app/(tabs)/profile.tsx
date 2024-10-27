@@ -1,15 +1,14 @@
 import { theme } from "@/theme";
 import { useOnboarding } from "@/hooks";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Button } from "@/components/Button";
+import { StyleSheet, View } from "react-native";
 
 export default function ProfileScreen() {
   const { backToOnboarding } = useOnboarding();
 
   return (
     <View style={styles.container}>
-      <Pressable onPress={backToOnboarding}>
-        <Text style={styles.text}>Back to onboarding</Text>
-      </Pressable>
+      <Button onPress={backToOnboarding} title="Back to onboarding" />
     </View>
   );
 }
@@ -20,8 +19,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: theme.color.white,
-  },
-  text: {
-    fontSize: 24,
   },
 });
