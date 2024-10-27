@@ -18,6 +18,14 @@ export default function Layout() {
           animation: "slide_from_right",
         }}
       />
+      <Stack.Screen
+        name="new"
+        options={{
+          title: "New Plant",
+          presentation: "modal",
+          animation: "fade_from_bottom",
+        }}
+      />
     </Stack>
   );
 }

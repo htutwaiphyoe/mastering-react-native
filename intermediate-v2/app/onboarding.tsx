@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 42,
-    marginBottom: 12,
+    marginBottom: 14,
     fontWeight: "bold",
     textAlign: "center",
     color: theme.color.white,
