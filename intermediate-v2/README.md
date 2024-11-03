@@ -98,3 +98,16 @@ Add paths: ['./src'] to "import/resolver" inside  .eslintrc.js
 built-in Image component and For advanced usage, use Expo Image or Fast Image.
 
 For local images in React Native, the image uri is passed in via require. This ensures the image files are bundled after.
+
+React Native app consists of two parts:
+
+- the JavaScript bundle (which you build with npx expo start)
+- the native app bundle (so far, Expo Go)
+
+npx expo install expo-dev-client
+
+npx expo prebuild --platform ios
+npx expo prebuild --platform android
+
+npx expo run:ios
+npx expo run:android
