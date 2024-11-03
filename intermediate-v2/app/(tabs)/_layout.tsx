@@ -1,9 +1,8 @@
 import { theme } from "@/theme";
 import { useOnboarding } from "@/hooks";
-import { Pressable } from "react-native";
-import Feather from "@expo/vector-icons/Feather";
-import { Link, Redirect, Tabs } from "expo-router";
+import { Redirect, Tabs } from "expo-router";
 import Entypo from "@expo/vector-icons/Entypo";
+import Feather from "@expo/vector-icons/Feather";
 
 export default function Layout() {
   const { isOnBoarded } = useOnboarding();
@@ -13,23 +12,16 @@ export default function Layout() {
   }
 
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: theme.color.green }}>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: theme.color.green,
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="(home)"
         options={{
-          title: "Home",
+          headerShown: false,
           tabBarIcon: (props) => <Entypo name="leaf" {...props} />,
-          headerRight: () => (
-            <Link href="/new" asChild>
-              <Pressable hitSlop={80} style={{ marginRight: 24 }}>
-                <Entypo
-                  size={24}
-                  name="add-to-list"
-                  color={theme.color.green}
-                />
-              </Pressable>
-            </Link>
-          ),
         }}
       />
       <Tabs.Screen

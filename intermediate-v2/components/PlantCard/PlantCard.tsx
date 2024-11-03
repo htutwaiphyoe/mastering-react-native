@@ -1,7 +1,8 @@
 import { theme } from "@/theme";
 import { Plant } from "@/types";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { PlantlyImage } from "@/components/PlantlyImage";
+import { Link } from "expo-router";
 
 type PlantCardProps = {
   plant: Plant;
@@ -9,15 +10,17 @@ type PlantCardProps = {
 
 export function PlantCard({ plant }: PlantCardProps) {
   return (
-    <View style={styles.card}>
-      <PlantlyImage size={100} imageUri={plant.imageUri} />
-      <View style={styles.content}>
-        <Text style={styles.title}>{plant.name}</Text>
-        <Text style={styles.subtitle}>
-          Water every {plant.wateringFrequencyDays} Days
-        </Text>
-      </View>
-    </View>
+    <Link href={`/plants/${plant.id}`} asChild>
+      <Pressable style={styles.card}>
+        <PlantlyImage size={100} imageUri={plant.imageUri} />
+        <View style={styles.content}>
+          <Text style={styles.title}>{plant.name}</Text>
+          <Text style={styles.subtitle}>
+            Water every {plant.wateringFrequencyDays} Days
+          </Text>
+        </View>
+      </Pressable>
+    </Link>
   );
 }
 
