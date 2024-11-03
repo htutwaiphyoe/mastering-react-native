@@ -136,3 +136,13 @@ npx expo install expo-font @expo-google-fonts/caveat
 A quick action is an item in the list that appears when you press and hold the app icon. It can be handy for launching actions directly from the app home screen. Or prompting users to give you feedback before deleting the app.
 
 npx expo install expo-quick-actions
+
+npx uri-scheme open plantly://plants/1730610510363ei1yas5 --ios
+
+npx uri-scheme open plantly://plants/1730610510363ei1yas5 --android
+
+```html
+<a href="plantly://plants/1730610510363ei1yas5">Click me</a>
+```
+
+npx uri-scheme open plantly://plants/1\?query=something --ios

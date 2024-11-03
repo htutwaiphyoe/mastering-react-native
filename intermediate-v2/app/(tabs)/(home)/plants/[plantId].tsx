@@ -5,7 +5,7 @@ import { theme } from "@/theme";
 import { getFullDateFormat } from "@/utils";
 import { differenceInCalendarDays, format } from "date-fns";
 import { useLocalSearchParams, useNavigation, useRouter } from "expo-router";
-import React from "react";
+import React, { useEffect } from "react";
 import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function PlantDetails() {
@@ -15,6 +15,20 @@ export default function PlantDetails() {
   const { removePlant, waterPlant, plants } = usePlantStore();
   const plantId = params.plantId;
   const plant = plants.find((plant) => plant.id === plantId);
+
+  useEffect(() => {
+    if (params.action === "water") {
+      if (typeof plantId === "string") {
+        waterPlant(plantId);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    navigation.setOptions({
+      title: plant?.name,
+    });
+  }, [plant?.name, navigation]);
 
   const handleWaterPlant = () => {
     if (typeof plantId === "string") waterPlant(plantId);

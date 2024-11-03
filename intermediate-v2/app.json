@@ -2,8 +2,8 @@
   "expo": {
     "name": "Plantly",
     "version": "1.0.0",
-    "slug": "intermediate-v2",
-    "scheme": "intermediate-v2",
+    "slug": "plantly",
+    "scheme": "plantly",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -40,7 +40,7 @@
       [
         "expo-quick-actions",
         {
-          "andriodIcons": {
+          "androidIcons": {
             "leaf": {
               "backgroundColor": "#ffffff",
               "foregroundImage": "./assets/leaf.png"
