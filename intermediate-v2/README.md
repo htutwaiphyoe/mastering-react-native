@@ -146,3 +146,7 @@ npx uri-scheme open plantly://plants/1730610510363ei1yas5 --android
 ```
 
 npx uri-scheme open plantly://plants/1\?query=something --ios
+
+In order for any app to be installable on a physical device, it needs to be signed. Build signing is a security mechanism and its purpose is to protect users by preventing them from installing potentially malicious apps.
+
+Both iOS and Android apps have a build signing step, though the process is completely different.
