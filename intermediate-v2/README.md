@@ -111,3 +111,14 @@ npx expo prebuild --platform android
 
 npx expo run:ios
 npx expo run:android
+
+The splash screen is a 1284 × 2778 png. It will be displayed when your app first launches while the app is loading. The image is passed in the app.json expo -> splash.
+
+The iOS app icon is a 1024 x 1024 png. No transparency. The image is passed in the app.json at expo -> icon.
+
+The Android app icon also a 1024 × 1024 png, but it is expected to have either transparency or a solid background. The image is passed in the app.json at expo -> android -> adaptiveIcon -> foregroundImage.
+
+For the web, we have a 48 x 48 png. Passed in the app.json at expo -> web -> favicon.
+
+npx expo prebuild --platform ios --clean
+npx expo prebuild --platform android --clean
