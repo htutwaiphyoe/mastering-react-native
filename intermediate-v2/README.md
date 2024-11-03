@@ -122,3 +122,13 @@ For the web, we have a 48 x 48 png. Passed in the app.json at expo -> web -> fav
 
 npx expo prebuild --platform ios --clean
 npx expo prebuild --platform android --clean
+
+the default system font for each platform: that is, San Francisco on iOS and Roboto on Android. In order to use a custom font we need to bundle the font files with our application.
+
+There's two ways of including custom fonts with Expo:
+
+load the font at runtime with the useFonts hook - this exists to make custom fonts possible in Expo Go and loads the font in asynchronously at runtime
+using the expo-font config plugin - available only with development builds, bundles the font files in the native bundle so they're always available
+As we're on team Development Build now, we'll go with option number two! Format-wise, you can use either OTF and TTF formats. If the font you're using has both, choose OTF as the .otf files are smaller than .ttf files.
+
+npx expo install expo-font @expo-google-fonts/caveat

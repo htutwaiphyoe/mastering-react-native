@@ -3,7 +3,7 @@ import { useOnboarding } from "@/hooks";
 import { StatusBar } from "expo-status-bar";
 import { Button } from "@/components/Button";
 import { LinearGradient } from "expo-linear-gradient";
-import { StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View } from "react-native";
 import { PlantlyImage } from "@/components/PlantlyImage";
 
 export default function OnboardingScreen() {
@@ -48,9 +48,13 @@ const styles = StyleSheet.create({
     color: theme.color.white,
   },
   tagLine: {
-    fontSize: 24,
+    fontSize: 34,
     fontWeight: "500",
     textAlign: "center",
     color: theme.color.white,
+    fontFamily: Platform.select({
+      ios: "Caveat-Regular",
+      android: "Caveat_400Regular",
+    }),
   },
 });
