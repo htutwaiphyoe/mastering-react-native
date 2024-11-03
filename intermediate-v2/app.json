@@ -36,6 +36,17 @@
             "node_modules/@expo-google-fonts/caveat/Caveat_400Regular.ttf"
           ]
         }
+      ],
+      [
+        "expo-quick-actions",
+        {
+          "andriodIcons": {
+            "leaf": {
+              "backgroundColor": "#ffffff",
+              "foregroundImage": "./assets/leaf.png"
+            }
+          }
+        }
       ]
     ]
   }

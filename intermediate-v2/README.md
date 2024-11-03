@@ -132,3 +132,7 @@ using the expo-font config plugin - available only with development builds, bund
 As we're on team Development Build now, we'll go with option number two! Format-wise, you can use either OTF and TTF formats. If the font you're using has both, choose OTF as the .otf files are smaller than .ttf files.
 
 npx expo install expo-font @expo-google-fonts/caveat
+
+A quick action is an item in the list that appears when you press and hold the app icon. It can be handy for launching actions directly from the app home screen. Or prompting users to give you feedback before deleting the app.
+
+npx expo install expo-quick-actions
