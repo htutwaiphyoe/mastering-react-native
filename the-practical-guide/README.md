@@ -30,3 +30,5 @@ cannot use html element like h1,h2 in react native, need to use React Native Com
 for div => View
 for text => Text
 for css => StyleSheet
+
+text must be wrapped with Text component
