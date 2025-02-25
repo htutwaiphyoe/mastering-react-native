@@ -24,3 +24,9 @@ React Native CLI => React Native Team => Bare-bone boilerplate => can integrate 
 npx @react-native-community/cli@latest init AwesomeProject
 
 npx create-expo-app@latest
+
+cannot use html element like h1,h2 in react native, need to use React Native Component
+
+for div => View
+for text => Text
+for css => StyleSheet
