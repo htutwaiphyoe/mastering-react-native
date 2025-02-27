@@ -20,3 +20,7 @@ other logic code such as functions are run on JS thread of React Native in nativ
 Expo CLI => Open-Source Third-Party Services => Framework for Better DX => can switch to React Native CLI
 
 React Native CLI => React Native Team => Bare-bone boilerplate => can integrate with native code
+
+npx @react-native-community/cli@latest init AwesomeProject
+
+npx create-expo-app@latest
