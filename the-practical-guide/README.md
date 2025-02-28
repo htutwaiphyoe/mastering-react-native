@@ -16,3 +16,7 @@ ReactNative provides
 ReactNative => Compiled view components to respective platform equivalents native components
 
 other logic code such as functions are run on JS thread of React Native in native app that is built
+
+Expo CLI => Open-Source Third-Party Services => Framework for Better DX => can switch to React Native CLI
+
+React Native CLI => React Native Team => Bare-bone boilerplate => can integrate with native code
