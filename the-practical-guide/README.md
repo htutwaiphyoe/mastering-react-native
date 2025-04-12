@@ -1,5 +1,7 @@
 # React Native - The Practical Guide
 
+## Getting Started
+
 React + ReactNative => Mobile Development (iOS + Android)
 
 React + ReactDOM => Web Development
@@ -25,7 +27,11 @@ npx @react-native-community/cli@latest init AwesomeProject
 
 npx create-expo-app@latest
 
+## Core components
+
 cannot use html element like h1,h2 in react native, need to use React Native Component
+
+react native is all about using core components
 
 for div => View
 for text => Text
