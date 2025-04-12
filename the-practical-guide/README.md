@@ -38,3 +38,11 @@ for text => Text
 for css => StyleSheet
 
 text must be wrapped with Text component
+
+view for layout
+
+different components for different roles
+
+[react-native-safe-area-context](https://appandflow.github.io/react-native-safe-area-context/)
+
+SafeAreaView for extra padding or margin not to overlaps with any system elements (status bar, notches, etc.)
