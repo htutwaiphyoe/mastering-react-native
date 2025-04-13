@@ -46,3 +46,15 @@ different components for different roles
 [react-native-safe-area-context](https://appandflow.github.io/react-native-safe-area-context/)
 
 SafeAreaView for extra padding or margin not to overlaps with any system elements (status bar, notches, etc.)
+
+no css support in React Native
+
+inline styles or stylesheet object => js object with css like style support but only a subset
+
+style props cannot support in all elements
+
+px => auto adjust to device pixel density
+
+stylesheet for separation of concerns and reusability
+
+use array for multiple styles and the later styles in the array have higher priority.

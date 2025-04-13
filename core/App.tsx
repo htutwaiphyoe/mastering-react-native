@@ -1,10 +1,10 @@
-import {Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
 function App(): React.JSX.Element {
   return (
     <SafeAreaProvider>
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
         <View>
           <Text>Hello, React Native</Text>
         </View>
@@ -14,3 +14,11 @@ function App(): React.JSX.Element {
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
