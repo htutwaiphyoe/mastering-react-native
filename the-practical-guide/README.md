@@ -58,3 +58,5 @@ px => auto adjust to device pixel density
 stylesheet for separation of concerns and reusability
 
 use array for multiple styles and the later styles in the array have higher priority.
+
+react native uses flex box for layouts, similar to css
