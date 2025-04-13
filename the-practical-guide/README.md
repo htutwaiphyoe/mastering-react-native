@@ -60,3 +60,13 @@ stylesheet for separation of concerns and reusability
 use array for multiple styles and the later styles in the array have higher priority.
 
 react native uses flex box for layouts, similar to css
+
+View is flex by default, can use flex properties the right away
+
+flex box => one direction, default column
+
+default size of child follows content of the child and default stretch of cross axis
+
+main axis depends on flex direction
+
+flex values related to each other
