@@ -21,18 +21,32 @@ function App() {
           />
           <View style={styles.buttonContainer}>
             <Pressable
-              style={styles.primaryButton}
+              style={styles.secondaryButton}
               onPress={() => setInput('')}>
-              <Text>Clear</Text>
+              <Text style={styles.secondaryButtonText}>Clear</Text>
             </Pressable>
             <Pressable
-              style={styles.secondaryButton}
+              style={styles.primaryButton}
               onPress={() => {
                 setNotes(prev => [...prev, input]);
                 setInput('');
               }}>
-              <Text>Submit</Text>
+              <Text style={styles.primaryButtonText}>Submit</Text>
             </Pressable>
+          </View>
+        </View>
+        <View style={styles.notesContainer}>
+          <Text style={styles.noteHeading}>
+            {notes.length > 0
+              ? `${notes.length} note${notes.length > 1 ? 's' : ''}:`
+              : 'No notes yet!'}
+          </Text>
+          <View style={styles.notes}>
+            {notes.map((note, index) => (
+              <View key={index} style={styles.note}>
+                <Text>{note}</Text>
+              </View>
+            ))}
           </View>
         </View>
       </SafeAreaView>
@@ -46,6 +60,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    rowGap: 16,
     backgroundColor: colors.background,
   },
   formContainer: {
@@ -57,28 +72,59 @@ const styles = StyleSheet.create({
     fontSize: 16,
     borderWidth: 1,
     borderRadius: 8,
+    color: colors.black,
     borderColor: colors.border,
-    backgroundColor: colors.background,
+    backgroundColor: colors.white,
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     columnGap: 16,
   },
+
   primaryButton: {
-    backgroundColor: colors.border,
+    backgroundColor: colors.primary,
+    color: colors.black,
     padding: 16,
     borderRadius: 8,
     flex: 1,
     alignItems: 'center',
   },
+  primaryButtonText: {
+    color: colors.white,
+    fontSize: 16,
+    fontWeight: '600',
+  },
   secondaryButton: {
     backgroundColor: colors.background,
     borderWidth: 1,
-    borderColor: colors.border,
+    borderColor: colors.primary,
     padding: 16,
     borderRadius: 8,
     flex: 1,
     alignItems: 'center',
+  },
+  secondaryButtonText: {
+    color: colors.primary,
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  notesContainer: {
+    rowGap: 16,
+  },
+  noteHeading: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: colors.black,
+  },
+  notes: {
+    gap: 16,
+  },
+  note: {
+    padding: 16,
+    fontSize: 16,
+    borderRadius: 8,
+    color: colors.black,
+    backgroundColor: colors.white,
   },
 });
