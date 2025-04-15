@@ -70,3 +70,9 @@ default size of child follows content of the child and default stretch of cross 
 main axis depends on flex direction
 
 flex values related to each other
+
+Button does not have style prop
+
+[button](https://reactnative.dev/docs/button)
+
+[useref-with-textinput](https://medium.com/@rutikpanchal121/how-useref-is-useful-with-textinput-in-react-native-a54a916e3374)
