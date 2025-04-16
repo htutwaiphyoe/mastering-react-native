@@ -76,3 +76,7 @@ Button does not have style prop
 [button](https://reactnative.dev/docs/button)
 
 [useref-with-textinput](https://medium.com/@rutikpanchal121/how-useref-is-useful-with-textinput-in-react-native-a54a916e3374)
+
+[react-native-autogrow-textinput](https://github.com/wix-incubator/react-native-autogrow-textinput)
+
+[react-native-masonry-list](https://github.com/hyochan/react-native-masonry-list)
