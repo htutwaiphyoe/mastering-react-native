@@ -80,3 +80,9 @@ Button does not have style prop
 [react-native-autogrow-textinput](https://github.com/wix-incubator/react-native-autogrow-textinput)
 
 [react-native-masonry-list](https://github.com/hyochan/react-native-masonry-list)
+
+same as web event handling and state management due to React core features, difference is ReactNative instead of ReactDOM
+
+`onChangeText` for input change event
+
+`onPress` for onClick event

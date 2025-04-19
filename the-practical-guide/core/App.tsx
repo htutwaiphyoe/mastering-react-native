@@ -1,11 +1,20 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { colors } from './theme';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 function App() {
   const [notes, setNotes] = useState<string[]>([]);
   const [input, setInput] = useState<string>('');
+
+  const handleClear = useCallback(() => {
+    setInput('');
+  }, []);
+
+  const handleSubmit = useCallback((input: string) => {
+    setNotes(prev => [...prev, input]);
+    setInput('');
+  }, []);
 
   return (
     <SafeAreaProvider>
@@ -20,17 +29,12 @@ function App() {
             placeholder="What is your note today?"
           />
           <View style={styles.buttonContainer}>
-            <Pressable
-              style={styles.secondaryButton}
-              onPress={() => setInput('')}>
+            <Pressable style={styles.secondaryButton} onPress={handleClear}>
               <Text style={styles.secondaryButtonText}>Clear</Text>
             </Pressable>
             <Pressable
               style={styles.primaryButton}
-              onPress={() => {
-                setNotes(prev => [...prev, input]);
-                setInput('');
-              }}>
+              onPress={() => handleSubmit(input)}>
               <Text style={styles.primaryButtonText}>Submit</Text>
             </Pressable>
           </View>
