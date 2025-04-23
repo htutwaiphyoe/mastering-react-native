@@ -1,4 +1,11 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { colors } from './theme';
 import { useCallback, useState } from 'react';
@@ -45,13 +52,13 @@ function App() {
               ? `${notes.length} note${notes.length > 1 ? 's' : ''}:`
               : 'No notes yet!'}
           </Text>
-          <View style={styles.notes}>
+          <ScrollView contentContainerStyle={styles.notes}>
             {notes.map((note, index) => (
               <View key={index} style={styles.note}>
                 <Text>{note}</Text>
               </View>
             ))}
-          </View>
+          </ScrollView>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -115,6 +122,7 @@ const styles = StyleSheet.create({
   },
   notesContainer: {
     rowGap: 16,
+    flex: 1,
   },
   noteHeading: {
     fontSize: 24,
@@ -122,7 +130,7 @@ const styles = StyleSheet.create({
     color: colors.black,
   },
   notes: {
-    gap: 16,
+    rowGap: 16,
   },
   note: {
     padding: 16,

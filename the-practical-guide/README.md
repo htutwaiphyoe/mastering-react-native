@@ -92,3 +92,15 @@ iOS text native does not support rounded corner
 styling difference in iOS and Android
 
 style don't cascade in React Native
+
+View cannot auto scrollable by default like web
+
+use ScrollView for scrollable container
+
+[ScrollView](https://reactnative.dev/docs/scrollview)
+
+ScrollView scrollable area depends on parent container, wrap with normal View and set height in parent
+
+gap property doesn't work directly on a ScrollView. This is a common issue because gap properties work on flex containers but ScrollView handles its children differently. use `contentContainerStyle` for gap
+
+The issue is that ScrollView doesn't have enough height to properly scroll to the bottom. This is a common problem with ScrollView inside flex containers. flex: 1 to container
