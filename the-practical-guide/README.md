@@ -104,3 +104,15 @@ ScrollView scrollable area depends on parent container, wrap with normal View an
 gap property doesn't work directly on a ScrollView. This is a common issue because gap properties work on flex containers but ScrollView handles its children differently. use `contentContainerStyle` for gap
 
 The issue is that ScrollView doesn't have enough height to properly scroll to the bottom. This is a common problem with ScrollView inside flex containers. flex: 1 to container
+
+ScrollView is good for scrolling content and static list, not for dynamic list because ScrollView render everything inside it even some items are not on the screen.
+
+If list has thousand of items, ScrollView has performance issue, use `FlatList` for that
+
+FlatList for scrollable list and render only visible items and use lazy loading for invisible items. It has a small threshold to load items right before they are visible.
+
+[flatlist](https://reactnative.dev/docs/flatlist)
+
+data and renderItem props to pass in FlatList
+
+If item has key property, it is used by default in FlatList. If key is different property, use `keyExtractor`
