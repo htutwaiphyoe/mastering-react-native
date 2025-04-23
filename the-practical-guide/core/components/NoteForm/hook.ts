@@ -14,10 +14,15 @@ export function useNoteForm() {
     setInput('');
   }, []);
 
+  const handleDelete = useCallback((id: number) => {
+    setNotes((prev): Note[] => prev.filter(note => note.id !== id));
+  }, []);
+
   return {
     input,
     setInput,
     handleClear,
     handleSubmit,
+    handleDelete,
   };
 }

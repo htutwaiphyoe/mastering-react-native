@@ -1,6 +1,7 @@
 import { Text, View, FlatList } from 'react-native';
 import { styles } from './style';
 import { useNoteContext } from '../../providers/NoteProvider';
+import { NoteItem } from '../NoteItem';
 
 export function NoteList() {
   const { notes } = useNoteContext();
@@ -16,11 +17,7 @@ export function NoteList() {
         data={notes}
         contentContainerStyle={styles.notes}
         keyExtractor={item => item.id.toString()}
-        renderItem={({ item }) => (
-          <View style={styles.note}>
-            <Text>{item.data}</Text>
-          </View>
-        )}
+        renderItem={({ item }) => <NoteItem note={item} />}
       />
     </View>
   );
