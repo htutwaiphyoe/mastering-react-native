@@ -86,3 +86,9 @@ same as web event handling and state management due to React core features, diff
 `onChangeText` for input change event
 
 `onPress` for onClick event
+
+iOS text native does not support rounded corner
+
+styling difference in iOS and Android
+
+style don't cascade in React Native
