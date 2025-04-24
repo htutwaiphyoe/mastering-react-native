@@ -17,6 +17,7 @@ export function NoteList() {
         data={notes}
         numColumns={2}
         contentContainerStyle={styles.notes}
+        showsVerticalScrollIndicator={false}
         columnWrapperStyle={{ gap: 16, flex: 1 }}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => <NoteItem note={item} />}

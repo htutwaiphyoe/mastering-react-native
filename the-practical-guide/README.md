@@ -133,3 +133,12 @@ iOS => style={(pressed) => style}
 [Alert](https://reactnative.dev/docs/alert)
 
 [Image](https://reactnative.dev/docs/image)
+
+## Debugging
+
+- error message and stack in terminal
+- console.log
+- devtools
+- documentation
+
+[debugging](https://reactnative.dev/docs/debugging)
