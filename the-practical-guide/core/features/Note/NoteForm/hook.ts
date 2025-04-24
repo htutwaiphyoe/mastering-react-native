@@ -1,9 +1,10 @@
 import { useCallback, useState } from 'react';
 import { useNoteContext } from '../../../providers/NoteProvider';
+import { Alert } from 'react-native';
 
 export function useNoteForm() {
   const [input, setInput] = useState<string>('');
-  const { addNote, deleteNote } = useNoteContext();
+  const { addNote, deleteNote, closeModal } = useNoteContext();
 
   const handleClear = useCallback(() => {
     setInput('');
@@ -12,10 +13,24 @@ export function useNoteForm() {
   const handleSubmit = useCallback((input: string) => {
     addNote(input);
     setInput('');
+    closeModal();
   }, []);
 
   const handleDelete = useCallback((id: number) => {
-    deleteNote(id);
+    Alert.alert('Delete Note', 'Are you sure you want to delete this note?', [
+      { text: 'Cancel', style: 'cancel' },
+      {
+        text: 'Delete',
+        style: 'destructive',
+        onPress: () => {
+          deleteNote(id);
+          Alert.alert(
+            'Note Deleted',
+            'The note has been deleted successfully.',
+          );
+        },
+      },
+    ]);
   }, []);
 
   return {

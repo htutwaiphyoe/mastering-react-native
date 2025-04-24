@@ -119,7 +119,11 @@ If item has key property, it is used by default in FlatList. If key is different
 
 Pressable is modern approach to create button in React Native
 
-RippleEffect for press state
+RippleEffect for press state in Pressable
 
 Android => android_ripple
-iOS => style={(pressed) => {}}
+iOS => style={(pressed) => style}
+
+[Modal](https://reactnative.dev/docs/modal)
+
+[Alert](https://reactnative.dev/docs/alert)

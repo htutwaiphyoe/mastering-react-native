@@ -2,8 +2,14 @@ import { StyleSheet } from 'react-native';
 import { colors } from '../../../theme';
 
 export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
   formContainer: {
     rowGap: 16,
+    flex: 1,
+    padding: 16,
   },
   input: {
     padding: 16,
@@ -16,36 +22,13 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   buttonContainer: {
+    columnGap: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    columnGap: 16,
   },
-
-  primaryButton: {
-    backgroundColor: colors.primary,
-    color: colors.black,
+  closeButton: {
     padding: 16,
-    borderRadius: 8,
-    flex: 1,
-    alignItems: 'center',
-  },
-  primaryButtonText: {
-    color: colors.white,
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  secondaryButton: {
-    backgroundColor: colors.background,
-    borderWidth: 1,
-    borderColor: colors.primary,
-    padding: 16,
-    borderRadius: 8,
-    flex: 1,
-    alignItems: 'center',
-  },
-  secondaryButtonText: {
-    color: colors.primary,
-    fontSize: 16,
-    fontWeight: '600',
+    height: 85,
+    backgroundColor: colors.white,
   },
 });

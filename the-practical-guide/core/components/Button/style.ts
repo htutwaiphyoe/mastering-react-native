@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     borderColor: colors.primary,
-    backgroundColor: colors.background,
+    backgroundColor: colors.white,
   },
   secondaryDisabled: {
     flex: 1,

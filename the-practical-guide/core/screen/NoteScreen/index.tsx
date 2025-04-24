@@ -3,6 +3,7 @@ import { NoteForm } from '../../features/Note/NoteForm';
 import { NoteList } from '../../features/Note/NoteList';
 import { NoteProvider } from '../../providers/NoteProvider';
 import { styles } from './style';
+import { AddNoteButton } from '../../features/Note/AddNoteButton';
 
 export function NoteScreen() {
   return (
@@ -10,6 +11,7 @@ export function NoteScreen() {
       <NoteProvider>
         <NoteForm />
         <NoteList />
+        <AddNoteButton />
       </NoteProvider>
     </SafeAreaView>
   );
