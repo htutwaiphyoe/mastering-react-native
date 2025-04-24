@@ -1,6 +1,6 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { NoteForm } from '../../components/NoteForm';
-import { NoteList } from '../../components/NoteList';
+import { NoteForm } from '../../features/Note/NoteForm';
+import { NoteList } from '../../features/Note/NoteList';
 import { NoteProvider } from '../../providers/NoteProvider';
 import { styles } from './style';
 

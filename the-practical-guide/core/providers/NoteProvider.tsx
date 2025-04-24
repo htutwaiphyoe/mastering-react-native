@@ -1,8 +1,15 @@
-import { createContext, PropsWithChildren, useContext, useState } from 'react';
+import {
+  createContext,
+  PropsWithChildren,
+  useCallback,
+  useContext,
+  useState,
+} from 'react';
 
 type NoteContextType = {
   notes: Note[];
-  setNotes: React.Dispatch<React.SetStateAction<Note[]>>;
+  addNote: (input: string) => void;
+  deleteNote: (id: number) => void;
 };
 
 const NoteContext = createContext<NoteContextType | null>(null);
@@ -10,8 +17,16 @@ const NoteContext = createContext<NoteContextType | null>(null);
 export const NoteProvider = ({ children }: PropsWithChildren) => {
   const [notes, setNotes] = useState<Note[]>([]);
 
+  const addNote = useCallback((input: string) => {
+    setNotes((prev): Note[] => [...prev, { id: Date.now(), data: input }]);
+  }, []);
+
+  const deleteNote = useCallback((id: number) => {
+    setNotes((prev): Note[] => prev.filter(note => note.id !== id));
+  }, []);
+
   return (
-    <NoteContext.Provider value={{ notes, setNotes }}>
+    <NoteContext.Provider value={{ notes, addNote, deleteNote }}>
       {children}
     </NoteContext.Provider>
   );

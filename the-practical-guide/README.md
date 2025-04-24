@@ -118,3 +118,8 @@ data and renderItem props to pass in FlatList
 If item has key property, it is used by default in FlatList. If key is different property, use `keyExtractor`
 
 Pressable is modern approach to create button in React Native
+
+RippleEffect for press state
+
+Android => android_ripple
+iOS => style={(pressed) => {}}

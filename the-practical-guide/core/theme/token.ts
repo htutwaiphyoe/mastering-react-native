@@ -4,4 +4,6 @@ export const colors = {
   black: '#010101',
   border: '#ebebeb',
   primary: '#5465FF',
+  primaryLight: '#A7B2FF',
+  backgroundDark: '#ebebeb',
 };

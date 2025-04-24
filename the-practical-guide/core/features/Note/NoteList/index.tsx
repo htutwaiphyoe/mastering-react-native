@@ -1,6 +1,6 @@
 import { Text, View, FlatList } from 'react-native';
 import { styles } from './style';
-import { useNoteContext } from '../../providers/NoteProvider';
+import { useNoteContext } from '../../../providers/NoteProvider';
 import { NoteItem } from '../NoteItem';
 
 export function NoteList() {
