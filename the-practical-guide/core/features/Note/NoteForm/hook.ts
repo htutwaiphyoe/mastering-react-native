@@ -11,8 +11,8 @@ export function useNoteForm() {
   }, []);
 
   const handleSubmit = useCallback((input: string) => {
-    addNote(input);
     setInput('');
+    addNote(input);
     closeModal();
   }, []);
 

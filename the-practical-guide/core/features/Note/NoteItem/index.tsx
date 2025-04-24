@@ -11,13 +11,16 @@ export function NoteItem({ note }: NoteItemProps) {
   const { handleDelete } = useNoteForm();
 
   return (
-    <Pressable
-      onPress={() => handleDelete(note.id)}
-      style={({ pressed }) => pressed && styles.pressed}
-      android_ripple={{ color: colors.backgroundDark }}>
-      <View style={styles.note}>
-        <Text>{note.data}</Text>
-      </View>
-    </Pressable>
+    <View style={styles.noteItem}>
+      <Pressable
+        onPress={() => handleDelete(note.id)}
+        style={({ pressed }) => pressed && styles.pressed}
+        android_ripple={{ color: colors.backgroundDark }}>
+        <View style={styles.note}>
+          <Text style={styles.noteText}>{note.data}</Text>
+          <Text style={styles.noteDate}>{note.date.toDateString()}</Text>
+        </View>
+      </Pressable>
+    </View>
   );
 }

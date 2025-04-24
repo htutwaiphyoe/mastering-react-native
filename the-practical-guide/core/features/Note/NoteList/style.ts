@@ -7,11 +7,11 @@ export const styles = StyleSheet.create({
     rowGap: 16,
   },
   noteHeading: {
-    fontSize: 24,
-    fontWeight: '600',
+    fontSize: 32,
+    fontWeight: 900,
     color: colors.black,
   },
   notes: {
-    rowGap: 16,
+    gap: 16,
   },
 });

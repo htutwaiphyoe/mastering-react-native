@@ -6,15 +6,6 @@ import {
   useState,
 } from 'react';
 
-type NoteContextType = {
-  notes: Note[];
-  addNote: (input: string) => void;
-  deleteNote: (id: number) => void;
-  modal: boolean;
-  openModal: () => void;
-  closeModal: () => void;
-};
-
 const NoteContext = createContext<NoteContextType | null>(null);
 
 export const NoteProvider = ({ children }: PropsWithChildren) => {
@@ -22,7 +13,10 @@ export const NoteProvider = ({ children }: PropsWithChildren) => {
   const [modal, setModal] = useState<boolean>(false);
 
   const addNote = useCallback((input: string) => {
-    setNotes((prev): Note[] => [...prev, { id: Date.now(), data: input }]);
+    setNotes((prev): Note[] => [
+      ...prev,
+      { id: Date.now(), data: input, date: new Date() },
+    ]);
   }, []);
 
   const deleteNote = useCallback((id: number) => {

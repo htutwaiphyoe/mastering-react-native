@@ -3,7 +3,7 @@ import { Pressable, PressableProps, Text } from 'react-native';
 
 type ButtonProps = Omit<PressableProps, 'children'> & {
   children: React.ReactNode;
-  variant: 'primary' | 'secondary';
+  variant: 'primary' | 'secondary' | 'white';
 };
 
 export function Button({ variant, children, disabled, ...props }: ButtonProps) {

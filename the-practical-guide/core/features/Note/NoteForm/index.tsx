@@ -1,7 +1,7 @@
 import { styles } from './style';
 import { Button } from '../../../components/Button';
 import { useNoteForm } from './hook';
-import { View, TextInput, Modal } from 'react-native';
+import { View, TextInput, Modal, Image } from 'react-native';
 import { useNoteContext } from '../../../providers/NoteProvider';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
@@ -18,6 +18,10 @@ export function NoteForm() {
       <SafeAreaProvider>
         <SafeAreaView style={styles.container}>
           <View style={styles.formContainer}>
+            <Image
+              style={styles.image}
+              source={require('../../../assets/images/goal.png')}
+            />
             <TextInput
               multiline
               value={input}
@@ -28,23 +32,20 @@ export function NoteForm() {
             />
             <View style={styles.buttonContainer}>
               <Button
-                disabled={!input}
-                variant="secondary"
-                onPress={handleClear}>
-                Clear
+                variant="white"
+                onPress={() => {
+                  handleClear();
+                  closeModal();
+                }}>
+                Cancel
               </Button>
               <Button
-                variant="primary"
+                variant="secondary"
                 disabled={!input}
                 onPress={() => handleSubmit(input)}>
                 Add
               </Button>
             </View>
-          </View>
-          <View style={styles.closeButton}>
-            <Button variant="primary" onPress={closeModal}>
-              Close
-            </Button>
           </View>
         </SafeAreaView>
       </SafeAreaProvider>

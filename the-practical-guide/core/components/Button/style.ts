@@ -46,4 +46,25 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     color: colors.primary,
   },
+  white: {
+    flex: 1,
+    padding: 16,
+    borderWidth: 1,
+    borderRadius: 8,
+    alignItems: 'center',
+    borderColor: colors.white,
+  },
+  whiteDisabled: {
+    flex: 1,
+    padding: 16,
+    borderWidth: 1,
+    borderRadius: 8,
+    alignItems: 'center',
+    borderColor: colors.white,
+  },
+  whiteText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: colors.white,
+  },
 });

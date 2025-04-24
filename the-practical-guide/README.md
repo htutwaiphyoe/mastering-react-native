@@ -1,5 +1,9 @@
 # React Native - The Practical Guide
 
+Course by Maximilian Schwarzmüller
+
+[Github](https://github.com/academind/react-native-practical-guide-code)
+
 ## Getting Started
 
 React + ReactNative => Mobile Development (iOS + Android)
@@ -127,3 +131,5 @@ iOS => style={(pressed) => style}
 [Modal](https://reactnative.dev/docs/modal)
 
 [Alert](https://reactnative.dev/docs/alert)
+
+[Image](https://reactnative.dev/docs/image)
