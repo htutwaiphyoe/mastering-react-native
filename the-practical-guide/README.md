@@ -150,3 +150,7 @@ android => elevation: 0,1,2
 iOS => shadowColor, shadowOffset, shadowRadius, shadowOpacity
 
 maxLength for maximum number of character in TextInput
+
+keyboardType for keyboard type
+
+[TextInput](https://reactnative.dev/docs/textinput)
