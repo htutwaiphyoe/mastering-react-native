@@ -1,11 +1,14 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
+import {StartScreen} from './screens/StartScreen';
 
-function App(): React.JSX.Element {
+function App() {
   return (
-    <View>
-      <Text>Ok</Text>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <StartScreen />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 

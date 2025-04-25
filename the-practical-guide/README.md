@@ -142,3 +142,9 @@ iOS => style={(pressed) => style}
 - documentation
 
 [debugging](https://reactnative.dev/docs/debugging)
+
+shadow
+
+web => box-shadow
+android => elevation: 0,1,2
+iOS => shadowColor, shadowOffset, shadowRadius, shadowOpacity
