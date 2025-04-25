@@ -148,3 +148,5 @@ shadow
 web => box-shadow
 android => elevation: 0,1,2
 iOS => shadowColor, shadowOffset, shadowRadius, shadowOpacity
+
+maxLength for maximum number of character in TextInput
