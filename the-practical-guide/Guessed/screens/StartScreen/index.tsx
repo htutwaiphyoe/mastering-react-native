@@ -8,8 +8,12 @@ export function StartScreen() {
     <View style={styles.container}>
       <TextInput maxLength={2} keyboardType="number-pad" style={styles.input} />
       <View style={styles.buttonContainer}>
-        <Button>Reset</Button>
-        <Button>Confirm</Button>
+        <View style={styles.button}>
+          <Button>Reset</Button>
+        </View>
+        <View style={styles.button}>
+          <Button>Confirm</Button>
+        </View>
       </View>
     </View>
   );

@@ -154,3 +154,7 @@ maxLength for maximum number of character in TextInput
 keyboardType for keyboard type
 
 [TextInput](https://reactnative.dev/docs/textinput)
+
+[expo-linear-gradient](https://docs.expo.dev/versions/latest/sdk/linear-gradient/)
+
+[react-linear-gradient](https://github.com/react-native-linear-gradient/react-native-linear-gradient)

@@ -3,13 +3,14 @@ import {colors} from '../../theme/token';
 
 export const styles = StyleSheet.create({
   container: {
-    rowGap: 16,
+    margin: 24,
+    rowGap: 20,
     padding: 28,
     elevation: 4,
     shadowRadius: 6,
-    borderRadius: 8,
+    borderRadius: 12,
     shadowOpacity: 0.25,
-    marginHorizontal: 24,
+    alignItems: 'center',
     shadowColor: colors.black,
     backgroundColor: colors.pinkDark,
     shadowOffset: {width: 0, height: 2},
@@ -22,13 +23,13 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     color: colors.yellow,
     borderBottomWidth: 2,
-    marginHorizontal: 'auto',
     borderBottomColor: colors.yellow,
   },
   buttonContainer: {
-    columnGap: 16,
-    alignItems: 'center',
+    columnGap: 8,
     flexDirection: 'row',
-    justifyContent: 'center',
+  },
+  button: {
+    flex: 1,
   },
 });
