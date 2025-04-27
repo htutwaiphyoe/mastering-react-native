@@ -9,9 +9,9 @@ type ButtonProps = PressableProps & {
 export function Button({children, ...props}: ButtonProps) {
   return (
     <Pressable
+      {...props}
       android_ripple={{color: colors.pinkDark}}
-      style={({pressed}) => [styles.container, pressed && styles.pressed]}
-      {...props}>
+      style={({pressed}) => [styles.container, pressed && styles.pressed]}>
       <Text style={styles.text}>{children}</Text>
     </Pressable>
   );

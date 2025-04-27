@@ -1,35 +1,43 @@
 import {styles} from './style';
-import {Button} from '../../components/Button';
+import {Button} from '../../components';
 import React, {useCallback, useState} from 'react';
 import {Alert, TextInput, View} from 'react-native';
+import {useGameContext} from '../../providers';
 
 export function StartScreen() {
-  const [number, setNumber] = useState('');
+  const [guess, setGuess] = useState('');
+  const {goToGameScreen} = useGameContext();
 
-  const handleReset = useCallback(() => setNumber(''), []);
+  const handleReset = useCallback(() => setGuess(''), []);
 
   const handleConfirm = () => {
     const isValidNumber =
-      !isNaN(Number(number)) && Number(number) > 0 && Number(number) < 100;
+      !isNaN(Number(guess)) && Number(guess) > 0 && Number(guess) < 100;
 
     if (!isValidNumber) {
-      Alert.alert('Invalid number!', 'Number must be between 1 and 99.', [
-        {
-          text: 'Try again',
-          style: 'destructive',
-          onPress: handleReset,
-        },
-      ]);
+      return Alert.alert(
+        'Invalid number!',
+        'Number must be between 1 and 99.',
+        [
+          {
+            text: 'Try again',
+            style: 'destructive',
+            onPress: handleReset,
+          },
+        ],
+      );
     }
+
+    goToGameScreen(guess);
   };
 
   return (
     <View style={styles.container}>
       <TextInput
         maxLength={2}
-        value={number}
+        value={guess}
         style={styles.input}
-        onChangeText={setNumber}
+        onChangeText={setGuess}
         keyboardType="number-pad"
       />
       <View style={styles.buttonContainer}>
