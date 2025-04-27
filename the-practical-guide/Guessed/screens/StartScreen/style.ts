@@ -2,10 +2,13 @@ import {StyleSheet} from 'react-native';
 import {colors} from '../../theme/token';
 
 export const styles = StyleSheet.create({
-  container: {
+  screen: {
     margin: 24,
     rowGap: 20,
+  },
+  container: {
     padding: 28,
+    rowGap: 20,
     elevation: 4,
     shadowRadius: 6,
     borderRadius: 12,

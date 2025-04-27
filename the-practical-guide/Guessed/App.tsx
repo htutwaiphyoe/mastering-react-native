@@ -10,19 +10,19 @@ function App() {
   return (
     <GameProvider>
       <SafeAreaProvider>
-        <SafeAreaView style={styles.container}>
-          <LinearGradient
+        <LinearGradient
+          style={styles.container}
+          colors={[colors.pink, colors.yellow]}>
+          <ImageBackground
+            resizeMode="cover"
             style={styles.container}
-            colors={[colors.pink, colors.yellow]}>
-            <ImageBackground
-              resizeMode="cover"
-              style={styles.container}
-              imageStyle={styles.image}
-              source={require('./assets/images/background.png')}>
+            imageStyle={styles.image}
+            source={require('./assets/images/background.png')}>
+            <SafeAreaView style={styles.container}>
               <Navigation />
-            </ImageBackground>
-          </LinearGradient>
-        </SafeAreaView>
+            </SafeAreaView>
+          </ImageBackground>
+        </LinearGradient>
       </SafeAreaProvider>
     </GameProvider>
   );

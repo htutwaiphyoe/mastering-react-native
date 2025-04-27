@@ -3,6 +3,7 @@ import {Button} from '../../components';
 import React, {useCallback, useState} from 'react';
 import {Alert, TextInput, View} from 'react-native';
 import {useGameContext} from '../../providers';
+import {Title} from '../../components/Title';
 
 export function StartScreen() {
   const [guess, setGuess] = useState('');
@@ -32,20 +33,23 @@ export function StartScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      <TextInput
-        maxLength={2}
-        value={guess}
-        style={styles.input}
-        onChangeText={setGuess}
-        keyboardType="number-pad"
-      />
-      <View style={styles.buttonContainer}>
-        <View style={styles.button}>
-          <Button onPress={handleReset}>Reset</Button>
-        </View>
-        <View style={styles.button}>
-          <Button onPress={handleConfirm}>Confirm</Button>
+    <View style={styles.screen}>
+      <Title>Guess a Number</Title>
+      <View style={styles.container}>
+        <TextInput
+          maxLength={2}
+          value={guess}
+          style={styles.input}
+          onChangeText={setGuess}
+          keyboardType="number-pad"
+        />
+        <View style={styles.buttonContainer}>
+          <View style={styles.button}>
+            <Button onPress={handleReset}>Reset</Button>
+          </View>
+          <View style={styles.button}>
+            <Button onPress={handleConfirm}>Confirm</Button>
+          </View>
         </View>
       </View>
     </View>

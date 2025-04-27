@@ -1,10 +1,12 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {styles} from './style';
+import {View} from 'react-native';
+import {Title} from '../../components/Title';
 
 export function GameScreen() {
   return (
-    <View>
-      <Text>Game Screen</Text>
+    <View style={styles.screen}>
+      <Title>Opponent's Guess</Title>
     </View>
   );
 }
