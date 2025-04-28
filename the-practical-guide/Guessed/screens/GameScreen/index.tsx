@@ -6,9 +6,10 @@ import {useGameContext} from '../../providers';
 import {generateRandomNumber} from '../../utils';
 import {Number} from '../../components/Number';
 import {Button} from '../../components';
+import {Card} from '../../components/Card';
 
 export function GameScreen() {
-  const {guess, goToStartScreen} = useGameContext();
+  const {guess, goToEndScreen} = useGameContext();
   const boundary = useRef({min: 1, max: 100});
 
   const [currentGuess, setCurrentGuess] = useState(
@@ -51,20 +52,15 @@ export function GameScreen() {
   };
 
   useEffect(() => {
-    if (currentGuess === +guess) {
-      Alert.alert('You guessed it!', 'You won the game!', [
-        {text: 'Play again', style: 'cancel', onPress: goToStartScreen},
-      ]);
-    }
+    if (currentGuess === +guess) goToEndScreen();
   }, [currentGuess]);
 
   return (
     <View style={styles.screen}>
       <Title>Opponent's Guess</Title>
       <Number>{currentGuess}</Number>
-      <View style={styles.controls}>
-        <Text style={styles.title}>Higher or Lower?</Text>
-        <View style={styles.buttons}>
+      <Card title="Lower or Higher?">
+        <View style={styles.buttonContainer}>
           <Button style={styles.button} onPress={handleGuess('lower')}>
             -
           </Button>
@@ -72,7 +68,7 @@ export function GameScreen() {
             +
           </Button>
         </View>
-      </View>
+      </Card>
     </View>
   );
 }

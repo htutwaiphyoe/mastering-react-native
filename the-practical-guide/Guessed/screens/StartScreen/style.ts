@@ -6,18 +6,6 @@ export const styles = StyleSheet.create({
     margin: 24,
     rowGap: 20,
   },
-  container: {
-    padding: 28,
-    rowGap: 20,
-    elevation: 4,
-    shadowRadius: 6,
-    borderRadius: 12,
-    shadowOpacity: 0.25,
-    alignItems: 'center',
-    shadowColor: colors.black,
-    backgroundColor: colors.primary700,
-    shadowOffset: {width: 0, height: 2},
-  },
   input: {
     width: 50,
     height: 50,

@@ -1,14 +1,16 @@
 import React, {Fragment} from 'react';
 import {useGameContext} from '../providers';
-import {GameScreen, StartScreen} from '../screens';
+import {GameScreen, StartScreen, EndScreen} from '../screens';
+import {Screen} from '../types/global';
 
 export function Navigation() {
   const {screen} = useGameContext();
 
   return (
     <Fragment>
-      {screen === 'start' && <StartScreen />}
-      {screen === 'game' && <GameScreen />}
+      {screen === Screen.START && <StartScreen />}
+      {screen === Screen.GAME && <GameScreen />}
+      {screen === Screen.END && <EndScreen />}
     </Fragment>
   );
 }

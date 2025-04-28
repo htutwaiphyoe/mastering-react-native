@@ -1,16 +1,10 @@
 import {StyleSheet} from 'react-native';
+import {colors} from '../../theme';
 
 export const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    rowGap: 20,
+    rowGap: 12,
     padding: 28,
-  },
-  buttonContainer: {
-    columnGap: 8,
-    flexDirection: 'row',
-  },
-  button: {
-    flex: 1,
   },
 });
