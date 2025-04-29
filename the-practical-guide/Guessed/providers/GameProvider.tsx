@@ -7,11 +7,12 @@ import {
 } from 'react';
 
 type Game = {
-  guess?: string;
+  guess: string;
   screen: 'start' | 'game' | 'end';
 };
 
 type GameContext = Game & {
+  goToStartScreen: () => void;
   goToGameScreen: (guess: string) => void;
 };
 
@@ -23,6 +24,7 @@ const initialGameState: Game = {
 const initialGameContext: GameContext = {
   ...initialGameState,
   goToGameScreen: () => {},
+  goToStartScreen: () => {},
 };
 
 const GameContext = createContext<GameContext>(initialGameContext);
@@ -35,8 +37,12 @@ export const GameProvider = (props: PropsWithChildren) => {
     [],
   );
 
+  const goToStartScreen = useCallback(() => {
+    setGame({guess: '', screen: 'start'});
+  }, []);
+
   return (
-    <GameContext.Provider value={{...game, goToGameScreen}}>
+    <GameContext.Provider value={{...game, goToGameScreen, goToStartScreen}}>
       {props.children}
     </GameContext.Provider>
   );
