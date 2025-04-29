@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     borderRadius: 28,
     paddingVertical: 16,
     paddingHorizontal: 24,
-    backgroundColor: colors.pink,
+    backgroundColor: colors.primary500,
   },
   text: {
     color: colors.white,

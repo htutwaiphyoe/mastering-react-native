@@ -10,7 +10,7 @@ export function Button({children, ...props}: ButtonProps) {
   return (
     <Pressable
       {...props}
-      android_ripple={{color: colors.pinkDark}}
+      android_ripple={{color: colors.primary700}}
       style={({pressed}) => [styles.container, pressed && styles.pressed]}>
       <Text style={styles.text}>{children}</Text>
     </Pressable>

@@ -12,7 +12,7 @@ function App() {
       <SafeAreaProvider>
         <LinearGradient
           style={styles.container}
-          colors={[colors.pink, colors.yellow]}>
+          colors={[colors.primary500, colors.accent500]}>
           <ImageBackground
             resizeMode="cover"
             style={styles.container}

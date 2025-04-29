@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     alignItems: 'center',
     shadowColor: colors.black,
-    backgroundColor: colors.pinkDark,
+    backgroundColor: colors.primary700,
     shadowOffset: {width: 0, height: 2},
   },
   input: {
@@ -24,9 +24,9 @@ export const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: colors.yellow,
     borderBottomWidth: 2,
-    borderBottomColor: colors.yellow,
+    color: colors.accent500,
+    borderBottomColor: colors.accent500,
   },
   buttonContainer: {
     columnGap: 8,

@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     borderRadius: 12,
     fontWeight: 700,
     textAlign: 'center',
-    color: colors.yellow,
-    borderColor: colors.yellow,
+    color: colors.accent500,
+    borderColor: colors.accent500,
   },
 });
