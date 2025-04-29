@@ -1,5 +1,5 @@
 import {styles} from './style';
-import {Alert, Text, View} from 'react-native';
+import {Alert, View} from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import {Title} from '../../components/Title';
 import {useGameContext} from '../../providers';
@@ -7,6 +7,8 @@ import {generateRandomNumber} from '../../utils';
 import {Number} from '../../components/Number';
 import {Button} from '../../components';
 import {Card} from '../../components/Card';
+import Icon from 'react-native-vector-icons/AntDesign';
+import {colors} from '../../theme';
 
 export function GameScreen() {
   const {guess, goToEndScreen} = useGameContext();
@@ -61,12 +63,16 @@ export function GameScreen() {
       <Number>{currentGuess}</Number>
       <Card title="Lower or Higher?">
         <View style={styles.buttonContainer}>
-          <Button style={styles.button} onPress={handleGuess('lower')}>
-            -
-          </Button>
-          <Button style={styles.button} onPress={handleGuess('greater')}>
-            +
-          </Button>
+          <View style={styles.button}>
+            <Button onPress={handleGuess('lower')}>
+              <Icon name="minus" size={20} color={colors.white} />
+            </Button>
+          </View>
+          <View style={styles.button}>
+            <Button onPress={handleGuess('greater')}>
+              <Icon name="plus" size={20} color={colors.white} />
+            </Button>
+          </View>
         </View>
       </Card>
     </View>

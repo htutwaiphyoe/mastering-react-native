@@ -162,3 +162,7 @@ keyboardType for keyboard type
 [react-linear-gradient](https://github.com/react-native-linear-gradient/react-native-linear-gradient)
 
 [ImageBackground](https://reactnative.dev/docs/imagebackground)
+
+[react-native-svg](https://github.com/software-mansion/react-native-svg)
+
+[react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)

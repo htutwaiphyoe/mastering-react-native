@@ -1,7 +1,13 @@
 import {styles} from './style';
-import {Text} from 'react-native';
+import {Text, TextProps} from 'react-native';
 import {PropsWithChildren} from 'react';
 
-export function Number({children}: PropsWithChildren) {
-  return <Text style={styles.title}>{children}</Text>;
+type NumberProps = PropsWithChildren<TextProps>;
+
+export function Number({style, children, ...props}: NumberProps) {
+  return (
+    <Text style={[styles.title, style]} {...props}>
+      {children}
+    </Text>
+  );
 }
