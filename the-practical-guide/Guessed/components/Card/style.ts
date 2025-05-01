@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../theme/token';
+import {fontFamily} from '../../utils';
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,8 +17,8 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontWeight: 400,
     textAlign: 'center',
     color: colors.accent500,
+    fontFamily: fontFamily(),
   },
 });

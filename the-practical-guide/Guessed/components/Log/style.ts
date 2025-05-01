@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {colors, fonts} from '../../theme';
+import {colors} from '../../theme';
+import {fontFamily} from '../../utils';
 
 export const styles = StyleSheet.create({
   log: {
@@ -10,10 +11,10 @@ export const styles = StyleSheet.create({
   },
   logText: {
     fontSize: 18,
-    fontFamily: fonts.bold,
+    fontFamily: fontFamily(),
     color: colors.accent500,
   },
   logNumber: {
-    fontWeight: 'bold',
+    fontFamily: fontFamily('700'),
   },
 });

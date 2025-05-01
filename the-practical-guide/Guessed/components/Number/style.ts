@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {colors, fonts} from '../../theme';
+import {colors} from '../../theme';
+import {fontFamily} from '../../utils';
 
 export const styles = StyleSheet.create({
   title: {
@@ -11,6 +12,6 @@ export const styles = StyleSheet.create({
     color: colors.accent500,
     borderWidth: 2,
     borderColor: colors.accent500,
-    fontFamily: fonts.bold,
+    fontFamily: fontFamily('700'),
   },
 });

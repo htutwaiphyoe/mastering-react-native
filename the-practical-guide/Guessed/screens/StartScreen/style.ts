@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../theme/token';
+import {fontFamily} from '../../utils';
 
 export const styles = StyleSheet.create({
   screen: {
@@ -10,10 +11,10 @@ export const styles = StyleSheet.create({
     width: 50,
     height: 50,
     fontSize: 32,
-    fontWeight: 'bold',
     textAlign: 'center',
     borderBottomWidth: 2,
     color: colors.accent500,
+    fontFamily: fontFamily('700'),
     borderBottomColor: colors.accent500,
   },
   buttonContainer: {

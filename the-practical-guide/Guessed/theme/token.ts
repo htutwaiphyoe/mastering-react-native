@@ -9,9 +9,9 @@ export const colors = {
 };
 
 export const fonts = {
+  thin: 'Lato-Thin',
+  light: 'Lato-Light',
   regular: 'Lato-Regular',
   bold: 'Lato-Bold',
   black: 'Lato-Black',
-  light: 'Lato-Light',
-  thin: 'Lato-Thin',
 };

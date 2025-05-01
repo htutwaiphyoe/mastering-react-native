@@ -178,3 +178,10 @@ Make sure app screen is responsive to any different device screens and different
 use max or min and relative units such as %
 
 [height-and-width](https://reactnative.dev/docs/height-and-width)
+
+[Dimension API](https://reactnative.dev/docs/dimensions)
+
+Dimension API for building different sizes in different screen sizes
+
+screen => including status bar
+window => excluding status bar
