@@ -168,3 +168,5 @@ keyboardType for keyboard type
 [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 
 Text components can be nested and styles are inherited by Parent Text. View style are not inherited
+
+[custom-fonts-in-react-native](https://dev.to/iammtander/custom-fonts-in-react-native-pro-tip-4693)
