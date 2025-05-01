@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import {colors} from '../../theme';
 
 export function GameScreen() {
-  const {guess, goToEndScreen} = useGameContext();
+  const {guess, goToEndScreen, increaseRounds} = useGameContext();
   const boundary = useRef({min: 1, max: 100});
 
   const [currentGuess, setCurrentGuess] = useState(
@@ -55,6 +55,7 @@ export function GameScreen() {
 
   useEffect(() => {
     if (currentGuess === +guess) goToEndScreen();
+    increaseRounds(`${currentGuess}`);
   }, [currentGuess]);
 
   return (

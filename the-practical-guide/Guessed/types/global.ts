@@ -1,5 +1,6 @@
 export type Game = {
   guess: string;
+  rounds: number[];
   screen: Screen;
 };
 

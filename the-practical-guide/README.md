@@ -166,3 +166,5 @@ keyboardType for keyboard type
 [react-native-svg](https://github.com/software-mansion/react-native-svg)
 
 [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
+
+Text components can be nested and styles are inherited by Parent Text. View style are not inherited

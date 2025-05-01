@@ -7,3 +7,11 @@ export const colors = {
   primary800: '#3b021f',
   accent500: '#ddb52f',
 };
+
+export const fonts = {
+  regular: 'Lato-Regular',
+  bold: 'Lato-Bold',
+  black: 'Lato-Black',
+  light: 'Lato-Light',
+  thin: 'Lato-Thin',
+};

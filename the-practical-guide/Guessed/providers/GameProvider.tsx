@@ -11,10 +11,12 @@ type GameContext = Game & {
   goToStartScreen: () => void;
   goToGameScreen: (guess: string) => void;
   goToEndScreen: () => void;
+  increaseRounds: (guess: string) => void;
 };
 
 const initialGameState: Game = {
   guess: '',
+  rounds: [],
   screen: Screen.START,
 };
 
@@ -23,6 +25,7 @@ const initialGameContext: GameContext = {
   goToGameScreen: () => {},
   goToStartScreen: () => {},
   goToEndScreen: () => {},
+  increaseRounds: () => {},
 };
 
 const GameContext = createContext<GameContext>(initialGameContext);
@@ -31,21 +34,31 @@ export const GameProvider = (props: PropsWithChildren) => {
   const [game, setGame] = useState<Game>(initialGameState);
 
   const goToGameScreen = useCallback(
-    (guess: string) => setGame({guess, screen: Screen.GAME}),
+    (guess: string) => setGame({guess, rounds: [], screen: Screen.GAME}),
     [],
   );
 
+  const increaseRounds = useCallback((guess: string) => {
+    setGame(prev => ({...prev, rounds: [...prev.rounds, +guess]}));
+  }, []);
+
   const goToStartScreen = useCallback(() => {
-    setGame({guess: '', screen: Screen.START});
+    setGame({guess: '', screen: Screen.START, rounds: []});
   }, []);
 
   const goToEndScreen = useCallback(() => {
-    setGame({guess: '', screen: Screen.END});
+    setGame(prev => ({...prev, screen: Screen.END}));
   }, []);
 
   return (
     <GameContext.Provider
-      value={{...game, goToGameScreen, goToStartScreen, goToEndScreen}}>
+      value={{
+        ...game,
+        goToGameScreen,
+        goToStartScreen,
+        goToEndScreen,
+        increaseRounds,
+      }}>
       {props.children}
     </GameContext.Provider>
   );

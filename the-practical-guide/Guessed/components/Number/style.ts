@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../theme';
+import {colors, fonts} from '../../theme';
 
 export const styles = StyleSheet.create({
   title: {
@@ -11,5 +11,6 @@ export const styles = StyleSheet.create({
     color: colors.accent500,
     borderWidth: 2,
     borderColor: colors.accent500,
+    fontFamily: fonts.bold,
   },
 });
