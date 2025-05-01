@@ -170,3 +170,11 @@ keyboardType for keyboard type
 Text components can be nested and styles are inherited by Parent Text. View style are not inherited
 
 [custom-fonts-in-react-native](https://dev.to/iammtander/custom-fonts-in-react-native-pro-tip-4693)
+
+## Adaptive and Responsive UI
+
+Make sure app screen is responsive to any different device screens and different screen mode (landscape and portrait)
+
+use max or min and relative units such as %
+
+[height-and-width](https://reactnative.dev/docs/height-and-width)
