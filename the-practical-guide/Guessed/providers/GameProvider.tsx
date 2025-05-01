@@ -39,7 +39,7 @@ export const GameProvider = (props: PropsWithChildren) => {
   );
 
   const increaseRounds = useCallback((guess: string) => {
-    setGame(prev => ({...prev, rounds: [...prev.rounds, +guess]}));
+    setGame(prev => ({...prev, rounds: [+guess, ...prev.rounds]}));
   }, []);
 
   const goToStartScreen = useCallback(() => {

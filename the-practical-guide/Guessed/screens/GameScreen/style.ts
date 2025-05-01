@@ -13,4 +13,7 @@ export const styles = StyleSheet.create({
   button: {
     flex: 1,
   },
+  list: {
+    rowGap: 12,
+  },
 });

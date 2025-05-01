@@ -1,5 +1,5 @@
 import {styles} from './style';
-import {Alert, View} from 'react-native';
+import {Alert, FlatList, View} from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import {Title} from '../../components/Title';
 import {useGameContext} from '../../providers';
@@ -9,9 +9,10 @@ import {Button} from '../../components';
 import {Card} from '../../components/Card';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {colors} from '../../theme';
+import {Log} from '../../components/Log';
 
 export function GameScreen() {
-  const {guess, goToEndScreen, increaseRounds} = useGameContext();
+  const {guess, goToEndScreen, increaseRounds, rounds} = useGameContext();
   const boundary = useRef({min: 1, max: 100});
 
   const [currentGuess, setCurrentGuess] = useState(
@@ -51,11 +52,11 @@ export function GameScreen() {
     });
 
     setCurrentGuess(newGuess);
+    increaseRounds(currentGuess.toString());
   };
 
   useEffect(() => {
     if (currentGuess === +guess) goToEndScreen();
-    increaseRounds(`${currentGuess}`);
   }, [currentGuess]);
 
   return (
@@ -76,6 +77,15 @@ export function GameScreen() {
           </View>
         </View>
       </Card>
+      <FlatList
+        data={rounds}
+        contentContainerStyle={styles.list}
+        showsVerticalScrollIndicator={false}
+        keyExtractor={item => item.toString()}
+        renderItem={({item, index}) => (
+          <Log log={item} roundNo={rounds.length - index} />
+        )}
+      />
     </View>
   );
 }
