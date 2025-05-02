@@ -1,8 +1,8 @@
 import React from 'react';
-import {colors} from './theme';
-import {Navigation} from './navigation';
-import {GameProvider} from './providers';
-import {ImageBackground, StyleSheet} from 'react-native';
+import {colors} from '@/theme';
+import {Navigation} from '@/navigation';
+import {GameProvider} from '@/providers';
+import {ImageBackground, StatusBar, StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 
@@ -19,6 +19,7 @@ function App() {
             imageStyle={styles.image}
             source={require('./assets/images/background.png')}>
             <SafeAreaView style={styles.container}>
+              <StatusBar hidden />
               <Navigation />
             </SafeAreaView>
           </ImageBackground>

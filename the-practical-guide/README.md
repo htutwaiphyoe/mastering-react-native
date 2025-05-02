@@ -278,6 +278,8 @@ module.exports = {
 
 [Platform API](https://reactnative.dev/docs/platform)
 
- [platform-specific-code](https://reactnative.dev/docs/platform-specific-code)
+[platform-specific-code](https://reactnative.dev/docs/platform-specific-code)
 
 file.ios.extension, file.android.extension for platform specific fi les
+
+[StatusBar](https://reactnative.dev/docs/statusbar)
