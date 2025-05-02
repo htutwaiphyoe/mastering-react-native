@@ -1,7 +1,13 @@
 import {styles} from './style';
 import {Button} from '../../components';
 import React, {useCallback, useState} from 'react';
-import {Alert, Text, TextInput, View} from 'react-native';
+import {
+  Alert,
+  KeyboardAvoidingView,
+  ScrollView,
+  TextInput,
+  View,
+} from 'react-native';
 import {useGameContext} from '../../providers';
 import {Title} from '../../components/Title';
 import {Card} from '../../components/Card';
@@ -34,25 +40,29 @@ export function StartScreen() {
   };
 
   return (
-    <View style={styles.screen}>
-      <Title>Guess My Number</Title>
-      <Card title="Enter a number">
-        <TextInput
-          maxLength={2}
-          value={guess}
-          style={styles.input}
-          onChangeText={setGuess}
-          keyboardType="number-pad"
-        />
-        <View style={styles.buttonContainer}>
-          <View style={styles.button}>
-            <Button onPress={handleReset}>Reset</Button>
-          </View>
-          <View style={styles.button}>
-            <Button onPress={handleConfirm}>Confirm</Button>
-          </View>
+    <ScrollView style={styles.container}>
+      <KeyboardAvoidingView behavior="position" style={styles.container}>
+        <View style={styles.screen}>
+          <Title>Guess My Number</Title>
+          <Card title="Enter a number">
+            <TextInput
+              maxLength={2}
+              value={guess}
+              style={styles.input}
+              onChangeText={setGuess}
+              keyboardType="number-pad"
+            />
+            <View style={styles.buttonContainer}>
+              <View style={styles.button}>
+                <Button onPress={handleReset}>Reset</Button>
+              </View>
+              <View style={styles.button}>
+                <Button onPress={handleConfirm}>Confirm</Button>
+              </View>
+            </View>
+          </Card>
         </View>
-      </Card>
-    </View>
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 }

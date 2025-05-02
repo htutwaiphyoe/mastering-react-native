@@ -193,3 +193,7 @@ Orientation of screen can be locked in app.json `"orientation": "portrait"`
 Dimension APIs is only executed once, if users switch different orientation, it will not updated.
 
 use useWindowDimensions for that
+
+KeyboardAvoidView for not to overlapping entire screen with keyboard in iOS
+
+KeyboardAvoidView + ScrollView
