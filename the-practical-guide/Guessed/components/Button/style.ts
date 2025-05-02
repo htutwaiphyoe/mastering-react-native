@@ -7,10 +7,10 @@ export const styles = StyleSheet.create({
   container: {
     margin: 4,
     elevation: 2,
+    backgroundColor: colors.primary500,
     borderRadius: isSmallDevice() ? 12 : 28,
     paddingVertical: isSmallDevice() ? 12 : 16,
     paddingHorizontal: isSmallDevice() ? 16 : 24,
-    backgroundColor: colors.primary500,
   },
   text: {
     fontSize: 16,

@@ -185,3 +185,7 @@ Dimension API for building different sizes in different screen sizes
 
 screen => including status bar
 window => excluding status bar
+
+Percentage is not good for every place
+
+Orientation of screen can be locked in app.json `"orientation": "portrait"`
