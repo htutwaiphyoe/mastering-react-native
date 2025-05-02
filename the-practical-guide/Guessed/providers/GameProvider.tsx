@@ -5,7 +5,7 @@ import {
   useContext,
   useState,
 } from 'react';
-import {Game, Screen} from '../types/global';
+import {Game, Screen} from '@/types';
 
 type GameContext = Game & {
   goToStartScreen: () => void;

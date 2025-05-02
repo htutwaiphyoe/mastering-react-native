@@ -1,4 +1,4 @@
-import {fonts} from '../theme';
+import {fonts} from '@/theme';
 
 export const fontFamily = (
   weight: '100' | '300' | '400' | '700' | '900' = '400',

@@ -1,6 +1,6 @@
+import {colors} from '@/theme';
+import {fontFamily} from '@/utils';
 import {StyleSheet} from 'react-native';
-import {colors} from '../../theme';
-import {fontFamily} from '../../utils';
 
 export const styles = StyleSheet.create({
   log: {

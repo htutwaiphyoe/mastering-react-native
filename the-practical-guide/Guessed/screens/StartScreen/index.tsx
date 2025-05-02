@@ -1,6 +1,8 @@
 import {styles} from './style';
-import {Button} from '../../components';
-import React, {useCallback, useState} from 'react';
+import {useGameContext} from '@/providers';
+import {useCallback, useState} from 'react';
+import {globalStyles} from '@/styles/global';
+import {Button, Card, Title} from '@/components';
 import {
   Alert,
   KeyboardAvoidingView,
@@ -8,10 +10,6 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import {useGameContext} from '../../providers';
-import {Title} from '../../components/Title';
-import {Card} from '../../components/Card';
-import {globalStyles} from '../../styles/global';
 
 export function StartScreen() {
   const [guess, setGuess] = useState('');

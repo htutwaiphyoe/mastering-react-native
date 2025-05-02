@@ -1,5 +1,5 @@
-import {PropsWithChildren} from 'react';
 import {styles} from './style';
+import {PropsWithChildren} from 'react';
 import {Text, View} from 'react-native';
 
 type CardProps = PropsWithChildren<{

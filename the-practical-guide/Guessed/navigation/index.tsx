@@ -1,7 +1,7 @@
+import {Screen} from '@/types';
 import React, {Fragment} from 'react';
-import {useGameContext} from '../providers';
-import {GameScreen, StartScreen, EndScreen} from '../screens';
-import {Screen} from '../types/global';
+import {useGameContext} from '@/providers';
+import {GameScreen, StartScreen, EndScreen} from '@/screens';
 
 export function Navigation() {
   const {screen} = useGameContext();

@@ -1,6 +1,6 @@
-import {useDimensions} from '../../hooks';
-import {colors} from '../../theme/token';
 import {styles} from './style';
+import {colors} from '@/theme/token';
+import {useDimensions} from '@/hooks';
 import {Pressable, PressableProps, Text, TextProps} from 'react-native';
 
 type ButtonProps = PressableProps & {

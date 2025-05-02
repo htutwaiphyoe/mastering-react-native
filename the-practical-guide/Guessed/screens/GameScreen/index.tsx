@@ -1,17 +1,13 @@
 import {styles} from './style';
-import {Alert, FlatList, ScrollView, View} from 'react-native';
-import React, {useEffect, useRef, useState} from 'react';
-import {Title} from '../../components/Title';
-import {useGameContext} from '../../providers';
-import {generateRandomNumber} from '../../utils';
-import {Number} from '../../components/Number';
-import {Button} from '../../components';
-import {Card} from '../../components/Card';
+import {colors} from '@/theme';
+import {useDimensions} from '@/hooks';
+import {useGameContext} from '@/providers';
+import {generateRandomNumber} from '@/utils';
+import {globalStyles} from '@/styles/global';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {colors} from '../../theme';
-import {Log} from '../../components/Log';
-import {globalStyles} from '../../styles/global';
-import {useDimensions} from '../../hooks';
+import React, {useEffect, useRef, useState} from 'react';
+import {Title, Button, Card, Log, Number} from '@/components';
+import {Alert, FlatList, ScrollView, View} from 'react-native';
 
 export function GameScreen() {
   const {guess, goToEndScreen, increaseRounds, rounds} = useGameContext();

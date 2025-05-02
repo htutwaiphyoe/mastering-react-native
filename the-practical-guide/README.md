@@ -201,3 +201,77 @@ KeyboardAvoidView + ScrollView
 Adjust Layout structure depend on screen sizes
 
 Error: a FlatList nested inside a ScrollView => scrollEnabled={false} in flat list
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@components/*": ["./components/*"],
+      "@screens/*": ["./screens/*"],
+      "@providers/*": ["./providers/*"],
+      "@styles/*": ["./styles/*"]
+    }
+  }
+}
+```
+
+`metro.config.js`
+
+```js
+const { getDefaultConfig } = require('metro-config');
+
+module.exports = (async () => {
+  const {
+    resolver: { sourceExts, assetExts },
+  } = await getDefaultConfig();
+  return {
+    transformer: {
+      getTransformOptions: async () => ({
+        transform: {
+          experimentalImportSupport: false,
+          inlineRequires: true,
+        },
+      }),
+    },
+    resolver: {
+      sourceExts,
+      assetExts,
+      extraNodeModules: {
+        '@': __dirname,
+        '@components': __dirname + '/components',
+        '@screens': __dirname + '/screens',
+        '@providers': __dirname + '/providers',
+        '@styles': __dirname + '/styles',
+      },
+    },
+  };
+})();
+```
+
+`npm install --save-dev babel-plugin-module-resolver metro-react-native-babel-preset`
+
+`babel.config.js`
+
+```js
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        root: ['./'],
+        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
+        alias: {
+          '@': './',
+          '@components': './components',
+          '@screens': './screens',
+          '@providers': './providers',
+          '@styles': './styles',
+        },
+      },
+    ],
+  ],
+};
+```

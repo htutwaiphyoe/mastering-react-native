@@ -1,6 +1,6 @@
 import {styles} from './style';
-import {Text, TextProps} from 'react-native';
 import {PropsWithChildren} from 'react';
+import {Text, TextProps} from 'react-native';
 
 type NumberProps = PropsWithChildren<TextProps>;
 
