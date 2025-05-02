@@ -189,3 +189,7 @@ window => excluding status bar
 Percentage is not good for every place
 
 Orientation of screen can be locked in app.json `"orientation": "portrait"`
+
+Dimension APIs is only executed once, if users switch different orientation, it will not updated.
+
+use useWindowDimensions for that
