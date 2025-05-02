@@ -1,5 +1,5 @@
 import {styles} from './style';
-import {Alert, FlatList, View} from 'react-native';
+import {Alert, FlatList, ScrollView, View} from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import {Title} from '../../components/Title';
 import {useGameContext} from '../../providers';
@@ -10,10 +10,13 @@ import {Card} from '../../components/Card';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {colors} from '../../theme';
 import {Log} from '../../components/Log';
+import {globalStyles} from '../../styles/global';
+import {useDimensions} from '../../hooks';
 
 export function GameScreen() {
   const {guess, goToEndScreen, increaseRounds, rounds} = useGameContext();
   const boundary = useRef({min: 1, max: 100});
+  const {isLandscape} = useDimensions();
 
   const [currentGuess, setCurrentGuess] = useState(
     generateRandomNumber({
@@ -60,32 +63,37 @@ export function GameScreen() {
   }, [currentGuess]);
 
   return (
-    <View style={styles.screen}>
-      <Title>Opponent's Guess</Title>
-      <Number>{currentGuess}</Number>
-      <Card title="Lower or Higher?">
-        <View style={styles.buttonContainer}>
-          <View style={styles.button}>
-            <Button onPress={handleGuess('lower')}>
-              <Icon name="minus" size={20} color={colors.white} />
-            </Button>
+    <ScrollView
+      style={globalStyles.container}
+      showsVerticalScrollIndicator={false}>
+      <View style={styles.screen}>
+        <Title>Opponent's Guess</Title>
+        <Number>{currentGuess}</Number>
+        <Card title="Lower or Higher?">
+          <View style={styles.buttonContainer}>
+            <View style={styles.button}>
+              <Button onPress={handleGuess('lower')}>
+                <Icon name="minus" size={20} color={colors.white} />
+              </Button>
+            </View>
+            <View style={styles.button}>
+              <Button onPress={handleGuess('greater')}>
+                <Icon name="plus" size={20} color={colors.white} />
+              </Button>
+            </View>
           </View>
-          <View style={styles.button}>
-            <Button onPress={handleGuess('greater')}>
-              <Icon name="plus" size={20} color={colors.white} />
-            </Button>
-          </View>
-        </View>
-      </Card>
-      <FlatList
-        data={rounds}
-        contentContainerStyle={styles.list}
-        showsVerticalScrollIndicator={false}
-        keyExtractor={item => item.toString()}
-        renderItem={({item, index}) => (
-          <Log log={item} roundNo={rounds.length - index} />
-        )}
-      />
-    </View>
+        </Card>
+        <FlatList
+          data={rounds}
+          scrollEnabled={!isLandscape}
+          contentContainerStyle={styles.list}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={item => item.toString()}
+          renderItem={({item, index}) => (
+            <Log log={item} roundNo={rounds.length - index} />
+          )}
+        />
+      </View>
+    </ScrollView>
   );
 }

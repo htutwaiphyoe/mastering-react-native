@@ -11,6 +11,7 @@ import {
 import {useGameContext} from '../../providers';
 import {Title} from '../../components/Title';
 import {Card} from '../../components/Card';
+import {globalStyles} from '../../styles/global';
 
 export function StartScreen() {
   const [guess, setGuess] = useState('');
@@ -40,8 +41,10 @@ export function StartScreen() {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <KeyboardAvoidingView behavior="position" style={styles.container}>
+    <ScrollView
+      style={globalStyles.container}
+      showsVerticalScrollIndicator={false}>
+      <KeyboardAvoidingView behavior="position" style={globalStyles.container}>
         <View style={styles.screen}>
           <Title>Guess My Number</Title>
           <Card title="Enter a number">

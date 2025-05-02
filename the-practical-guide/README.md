@@ -197,3 +197,7 @@ use useWindowDimensions for that
 KeyboardAvoidView for not to overlapping entire screen with keyboard in iOS
 
 KeyboardAvoidView + ScrollView
+
+Adjust Layout structure depend on screen sizes
+
+Error: a FlatList nested inside a ScrollView => scrollEnabled={false} in flat list

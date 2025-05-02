@@ -3,9 +3,6 @@ import {colors} from '../../theme/token';
 import {fontFamily} from '../../utils';
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   screen: {
     margin: 24,
     rowGap: 20,
