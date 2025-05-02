@@ -1,16 +1,15 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {colors} from '../../theme/token';
 import {fontFamily} from '../../utils';
-
-const {width} = Dimensions.get('window');
+import {isSmallDevice} from '../../utils/isSmallDevice';
 
 export const styles = StyleSheet.create({
   container: {
     margin: 4,
     elevation: 2,
-    borderRadius: width > 450 ? 28 : 12,
-    paddingVertical: width > 450 ? 16 : 12,
-    paddingHorizontal: width > 450 ? 24 : 16,
+    borderRadius: isSmallDevice() ? 12 : 28,
+    paddingVertical: isSmallDevice() ? 12 : 16,
+    paddingHorizontal: isSmallDevice() ? 16 : 24,
     backgroundColor: colors.primary500,
   },
   text: {
