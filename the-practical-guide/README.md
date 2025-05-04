@@ -281,3 +281,13 @@ module.exports = {
 file.ios.extension, file.android.extension for platform specific fi les
 
 [StatusBar](https://reactnative.dev/docs/statusbar)
+
+## React Native Navigation
+
+[reactnavigation](https://reactnavigation.org/docs/getting-started)
+
+Core => @react-navigation/native
+
+Peers => react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated
+
+Navigators => @react-navigation/native-stack

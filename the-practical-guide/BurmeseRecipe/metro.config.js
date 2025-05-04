@@ -18,10 +18,10 @@ const config = (async () => {
       assetExts,
       extraNodeModules: {
         '@': __dirname,
-        '@components': __dirname + '/components',
-        '@screens': __dirname + '/screens',
-        '@providers': __dirname + '/providers',
-        '@styles': __dirname + '/styles',
+        '@/components': __dirname + '/components',
+        '@/screens': __dirname + '/screens',
+        '@/providers': __dirname + '/providers',
+        '@/styles': __dirname + '/styles',
       },
     },
   };
