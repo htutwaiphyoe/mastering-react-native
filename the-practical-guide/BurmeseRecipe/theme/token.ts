@@ -7,6 +7,13 @@ export const colors = {
 };
 
 export const fonts = {
-  roboto: 'Roboto',
-  tagesschrift: 'Tagesschrift',
+  thin: 'Roboto-Thin',
+  extraLight: 'Roboto-ExtraLight',
+  light: 'Roboto-Light',
+  regular: 'Roboto-Regular',
+  medium: 'Roboto-Medium',
+  semiBold: 'Roboto-SemiBold',
+  bold: 'Roboto-Bold',
+  extraBold: 'Roboto-ExtraBold',
+  black: 'Roboto-Black',
 };
