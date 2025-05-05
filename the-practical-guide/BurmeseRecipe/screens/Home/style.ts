@@ -5,10 +5,11 @@ export const styles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: colors.background,
-    padding: 24,
+    padding: 16,
   },
   header: {
     rowGap: 20,
+    paddingBottom: 20,
   },
   title: {
     fontSize: 24,
@@ -26,5 +27,18 @@ export const styles = StyleSheet.create({
   input: {
     fontSize: 16,
     color: colors.white,
+  },
+  scrollContainer: {
+    flex: 1,
+  },
+  masonry: {
+    gap: 16,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+  },
+  masonryItem: {
+    backgroundColor: colors.gray,
+    borderRadius: 8,
+    flex: 1,
   },
 });

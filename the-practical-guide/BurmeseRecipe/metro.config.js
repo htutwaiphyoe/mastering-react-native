@@ -23,6 +23,12 @@ const config = (async () => {
         '@/providers': __dirname + '/providers',
         '@/styles': __dirname + '/styles',
         '@/theme': __dirname + '/theme',
+        '@/assets': __dirname + '/assets',
+        '@/hooks': __dirname + '/hooks',
+        '@/utils': __dirname + '/utils',
+        '@/constants': __dirname + '/constants',
+        '@/navigation': __dirname + '/navigation',
+        '@/types': __dirname + '/types',
       },
     },
   };
