@@ -1,4 +1,4 @@
-import {colors} from '@/theme';
+import {colors, fonts} from '@/theme';
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: colors.white,
+    fontFamily: fonts.tagesschrift,
   },
   inputContainer: {
     padding: 20,
@@ -29,6 +30,7 @@ export const styles = StyleSheet.create({
     height: 18,
     color: colors.white,
     alignItems: 'center',
+    fontFamily: fonts.roboto,
   },
   scrollContainer: {
     flex: 1,
@@ -57,6 +59,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: colors.white,
+    fontFamily: fonts.roboto,
   },
   recipeIngredient: {
     fontSize: 14,

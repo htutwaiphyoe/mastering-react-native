@@ -50,6 +50,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ionicons.ttf</string>
+		<string>Tagesschrift.ttf</string>
+		<string>Roboto.ttf</string>
 	</array>
 </dict>
 </plist>

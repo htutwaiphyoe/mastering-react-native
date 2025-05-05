@@ -5,3 +5,8 @@ export const colors = {
   lightGray: '#D3D3D3',
   background: '#010101',
 };
+
+export const fonts = {
+  roboto: 'Roboto',
+  tagesschrift: 'Tagesschrift',
+};
