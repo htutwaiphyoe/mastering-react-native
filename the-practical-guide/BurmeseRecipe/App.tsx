@@ -21,7 +21,7 @@ function App() {
             <Stack.Screen
               name="Recipe"
               component={RecipeScreen}
-              // options={{headerShown: false}}
+              options={{headerShown: false}}
             />
           </Stack.Navigator>
         </NavigationContainer>

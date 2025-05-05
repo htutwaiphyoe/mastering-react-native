@@ -1,6 +1,6 @@
 import {styles} from './styles';
 import {userType} from '@/constants';
-import {HomeScreenNavigationParam, Recipe as TRecipe} from '@/types';
+import {ScreenNavigationProps, Recipe as TRecipe} from '@/types';
 import {useNavigation} from '@react-navigation/native';
 import {Image, Pressable, Text, View} from 'react-native';
 
@@ -9,7 +9,7 @@ export type RecipeProps = {
 };
 
 export function Recipe({data}: RecipeProps) {
-  const navigation = useNavigation<HomeScreenNavigationParam>();
+  const navigation = useNavigation<ScreenNavigationProps>();
 
   return (
     <Pressable

@@ -1,3 +1,4 @@
+import {RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export type UserType = '001' | '002';
@@ -18,12 +19,13 @@ export type ScreenNavigationParams = {
   Recipe: {data: Recipe};
 };
 
-export type HomeScreenNavigationParam = NativeStackNavigationProp<
+export type ScreenNavigationProps = NativeStackNavigationProp<
   ScreenNavigationParams,
-  'Home'
+  'Home',
+  'Recipe'
 >;
 
-export type RecipeScreenNavigationParam = NativeStackNavigationProp<
+export type RecipeScreenRouteParam = RouteProp<
   ScreenNavigationParams,
   'Recipe'
 >;

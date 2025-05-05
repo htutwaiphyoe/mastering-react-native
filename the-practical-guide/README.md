@@ -309,3 +309,9 @@ stack emulates native behaviors
 [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation)
 
 Wrap app with `<GestureHandlerRootView>`
+
+```ts
+useNavigation<NativeStackNavigationProp>()
+
+useRoute<RouteProp>()
+```
