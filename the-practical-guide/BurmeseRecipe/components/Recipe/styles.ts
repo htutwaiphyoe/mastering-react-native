@@ -8,6 +8,9 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
     backgroundColor: colors.gray,
   },
+  recipePressed: {
+    opacity: 0.8,
+  },
   recipeImageContainer: {
     height: 160,
   },

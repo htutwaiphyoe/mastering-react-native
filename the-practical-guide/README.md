@@ -293,3 +293,19 @@ Core => @react-navigation/native
 Peers => react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated
 
 Navigators => @react-navigation/native-stack
+
+Stack.Screen passes `navigation` and `route` object to Screen Component
+
+navigation.navigate()
+
+native-stack uses native components for animation and screens
+
+stack emulates native behaviors
+
+[useNavigation](https://reactnavigation.org/docs/use-navigation)
+
+[useRoute](https://reactnavigation.org/docs/use-route)
+
+[react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation)
+
+Wrap app with `<GestureHandlerRootView>`

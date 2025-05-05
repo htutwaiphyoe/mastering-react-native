@@ -1,15 +1,21 @@
 import {styles} from './styles';
 import {userType} from '@/constants';
-import {Recipe as TRecipe} from '@/types';
-import {Image, Text, View} from 'react-native';
+import {HomeScreenNavigationParam, Recipe as TRecipe} from '@/types';
+import {useNavigation} from '@react-navigation/native';
+import {Image, Pressable, Text, View} from 'react-native';
 
 export type RecipeProps = {
   data: TRecipe;
 };
 
 export function Recipe({data}: RecipeProps) {
+  const navigation = useNavigation<HomeScreenNavigationParam>();
+
   return (
-    <View key={data.Guid} style={styles.recipe}>
+    <Pressable
+      key={data.Guid}
+      style={({pressed}) => [styles.recipe, pressed && styles.recipePressed]}
+      onPress={() => navigation.navigate('Recipe', {data})}>
       <View style={styles.recipeImageContainer}>
         <Image style={styles.recipeImage} source={{uri: data.Image}} />
       </View>
@@ -23,6 +29,6 @@ export function Recipe({data}: RecipeProps) {
         </Text>
         <Text style={styles.recipeUserType}>{userType[data.UserType]}</Text>
       </View>
-    </View>
+    </Pressable>
   );
 }
