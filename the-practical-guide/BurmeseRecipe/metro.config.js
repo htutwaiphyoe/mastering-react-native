@@ -22,6 +22,7 @@ const config = (async () => {
         '@/screens': __dirname + '/screens',
         '@/providers': __dirname + '/providers',
         '@/styles': __dirname + '/styles',
+        '@/theme': __dirname + '/theme',
       },
     },
   };

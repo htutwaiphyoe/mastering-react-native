@@ -6,7 +6,15 @@
       "@/*": ["./*"],
       "@/screens/*": ["./screens/*"],
       "@/providers/*": ["./providers/*"],
-      "@/components/*": ["./components/*"]
+      "@/components/*": ["./components/*"],
+      "@/assets/*": ["./assets/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/utils/*": ["./utils/*"],
+      "@/navigation/*": ["./navigation/*"],
+      "@/constants/*": ["./constants/*"],
+      "@/styles/*": ["./styles/*"],
+      "@/theme/*": ["./theme/*"],
+      "@/types/*": ["./types/*"]
     }
   }
 }

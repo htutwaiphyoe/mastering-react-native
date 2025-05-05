@@ -1,14 +1,14 @@
 import {HomeScreen} from '@/screens';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <SafeAreaProvider>
+    <SafeAreaProvider>
+      <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
             name="Home"
@@ -16,8 +16,8 @@ function App() {
             options={{headerShown: false}}
           />
         </Stack.Navigator>
-      </SafeAreaProvider>
-    </NavigationContainer>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
