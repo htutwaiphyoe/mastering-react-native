@@ -326,4 +326,6 @@ screen option apply on one screen
 
 default screen option for all screens => screenOptions in Stack.Navigator
 
-options can be function with route and navigation param object
+options can be function with route and navigation param object for dynamic header text
+
+screen option can be set in screen component with navigation.setOptions(options) in useLayoutEffect
