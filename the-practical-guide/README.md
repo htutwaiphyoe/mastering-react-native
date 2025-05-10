@@ -315,3 +315,5 @@ useNavigation<NativeStackNavigationProp>()
 
 useRoute<RouteProp>()
 ```
+
+uri => url, react native auto detect width and height of local image
