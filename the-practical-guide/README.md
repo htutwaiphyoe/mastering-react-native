@@ -317,3 +317,13 @@ useRoute<RouteProp>()
 ```
 
 uri => url, react native auto detect width and height of local image
+
+Screen name for navigation, pass option object for custom screen
+
+[screen options](https://reactnavigation.org/docs/native-stack-navigator#api-definition)
+
+screen option apply on one screen
+
+default screen option for all screens => screenOptions in Stack.Navigator
+
+options can be function with route and navigation param object
