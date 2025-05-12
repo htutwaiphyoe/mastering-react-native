@@ -329,3 +329,5 @@ default screen option for all screens => screenOptions in Stack.Navigator
 options can be function with route and navigation param object for dynamic header text
 
 screen option can be set in screen component with navigation.setOptions(options) in useLayoutEffect
+
+header can add left and right icon buttons using options.headerLeft or navigation.setOptions
