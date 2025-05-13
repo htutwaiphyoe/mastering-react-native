@@ -16,16 +16,12 @@ export const styles = StyleSheet.create({
     objectFit: 'cover',
   },
   backButton: {
-    position: 'absolute',
     top: 60,
     left: 20,
-    backgroundColor: colors.background,
-    borderRadius: 50,
-    padding: 10,
-    opacity: 0.7,
   },
-  backButtonPressed: {
-    opacity: 0.5,
+  favoriteButton: {
+    top: 60,
+    right: 20,
   },
   content: {
     gap: 16,

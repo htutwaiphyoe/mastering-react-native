@@ -2,9 +2,8 @@ import {styles} from './styles';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {ScreenNavigationProps, RecipeScreenRouteParam} from '@/types';
 import {ScrollView, Text} from 'react-native-gesture-handler';
-import {Image, Pressable, View} from 'react-native';
-import Icon from 'react-native-vector-icons/AntDesign';
-import {colors} from '@/theme';
+import {Image, View} from 'react-native';
+import {IconButton} from '@/components/IconButton';
 
 export function RecipeScreen() {
   const {params} = useRoute<RecipeScreenRouteParam>();
@@ -12,6 +11,16 @@ export function RecipeScreen() {
 
   return (
     <View style={styles.screen}>
+      <IconButton
+        icon="left"
+        style={styles.backButton}
+        onPress={() => popTo('Home')}
+      />
+      <IconButton
+        icon="hearto"
+        style={styles.favoriteButton}
+        onPress={() => popTo('Home')}
+      />
       <ScrollView style={styles.screen} showsVerticalScrollIndicator={false}>
         <View style={styles.imageContainer}>
           <Image source={{uri: params.data.Image}} style={styles.image} />
@@ -30,14 +39,6 @@ export function RecipeScreen() {
           </View>
         </View>
       </ScrollView>
-      <Pressable
-        style={({pressed}) => [
-          styles.backButton,
-          pressed && styles.backButtonPressed,
-        ]}
-        onPress={() => popTo('Home')}>
-        <Icon name="left" size={20} color={colors.white} />
-      </Pressable>
     </View>
   );
 }
