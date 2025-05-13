@@ -17,13 +17,13 @@ export type RecipeList = Recipe[];
 
 export type ScreenNavigationParams = {
   Home: undefined;
+  Favorite: undefined;
   Recipe: {data: Recipe};
 };
 
 export type ScreenNavigationProps = NativeStackNavigationProp<
   ScreenNavigationParams,
-  'Home',
-  'Recipe'
+  'Home' | 'Favorite' | 'Recipe'
 >;
 
 export type RecipeScreenRouteParam = RouteProp<

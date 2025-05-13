@@ -8,7 +8,7 @@ import {ScreenNavigationProps, RecipeScreenRouteParam} from '@/types';
 
 export function RecipeScreen() {
   const {params} = useRoute<RecipeScreenRouteParam>();
-  const {popTo} = useNavigation<ScreenNavigationProps>();
+  const {goBack} = useNavigation<ScreenNavigationProps>();
   const [favorite, setFavorite] = useState(params.data.Favorite);
 
   const toggleFavorite = () => {
@@ -34,11 +34,7 @@ export function RecipeScreen() {
 
   return (
     <View style={styles.screen}>
-      <IconButton
-        icon="left"
-        style={styles.backButton}
-        onPress={() => popTo('Home')}
-      />
+      <IconButton icon="left" style={styles.backButton} onPress={goBack} />
       <IconButton
         onPress={toggleFavorite}
         style={styles.favoriteButton}
