@@ -331,3 +331,13 @@ options can be function with route and navigation param object for dynamic heade
 screen option can be set in screen component with navigation.setOptions(options) in useLayoutEffect
 
 header can add left and right icon buttons using options.headerLeft or navigation.setOptions
+
+[Drawer Navigation](https://reactnavigation.org/docs/drawer-navigator)
+
+[Bottom Tab Navigation](https://reactnavigation.org/docs/bottom-tab-navigator)
+
+If the gap is caused by SafeAreaView, adjust the padding using edges:
+
+```tsx
+<SafeAreaView style={styles.screen} edges={['left', 'right']}>
+```

@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {styles} from './styles';
 import {userType} from '@/constants';
 import {Tabs} from '@/components/Tabs';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import {Masonry} from '@/components/Masonry';
 import recipes from '@/assets/data/recipes.json';
 import {FilterInput} from '@/components/FilterInput';
@@ -14,9 +14,8 @@ export function HomeScreen() {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   return (
-    <SafeAreaView style={styles.screen}>
+    <SafeAreaView style={styles.screen} edges={['left', 'right']}>
       <View style={styles.header}>
-        <Text style={styles.title}>Burmese Recipes</Text>
         <FilterInput
           value={search}
           onChangeText={setSearch}

@@ -1,13 +1,36 @@
+import {useState} from 'react';
 import {styles} from './styles';
+import {Alert, Image, View} from 'react-native';
+import {IconButton} from '@/components/IconButton';
+import {ScrollView, Text} from 'react-native-gesture-handler';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {ScreenNavigationProps, RecipeScreenRouteParam} from '@/types';
-import {ScrollView, Text} from 'react-native-gesture-handler';
-import {Image, View} from 'react-native';
-import {IconButton} from '@/components/IconButton';
 
 export function RecipeScreen() {
   const {params} = useRoute<RecipeScreenRouteParam>();
   const {popTo} = useNavigation<ScreenNavigationProps>();
+  const [favorite, setFavorite] = useState(params.data.Favorite);
+
+  const toggleFavorite = () => {
+    if (!favorite) {
+      return setFavorite((prev): boolean => !prev);
+    }
+    Alert.alert(
+      'Remove from Favorite',
+      'Do you want to remove this recipe from favorite?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Remove',
+          style: 'destructive',
+          onPress: () => setFavorite((prev): boolean => !prev),
+        },
+      ],
+    );
+  };
 
   return (
     <View style={styles.screen}>
@@ -17,9 +40,9 @@ export function RecipeScreen() {
         onPress={() => popTo('Home')}
       />
       <IconButton
-        icon="hearto"
+        onPress={toggleFavorite}
         style={styles.favoriteButton}
-        onPress={() => popTo('Home')}
+        icon={favorite ? 'heart' : 'hearto'}
       />
       <ScrollView style={styles.screen} showsVerticalScrollIndicator={false}>
         <View style={styles.imageContainer}>

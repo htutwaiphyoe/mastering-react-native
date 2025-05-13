@@ -7,6 +7,7 @@ export type Recipe = {
   Guid: string;
   Name: string;
   Image: string;
+  Favorite?: boolean;
   Ingredients: string;
   CookingInstructions: string;
   UserType: UserType | (string & {});

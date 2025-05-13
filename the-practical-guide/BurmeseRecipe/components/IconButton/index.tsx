@@ -1,9 +1,9 @@
 import {colors} from '@/theme';
 import {styles} from './styles';
-import {Pressable, PressableProps, ViewStyle} from 'react-native';
+import {StyleProp} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {IconProps} from 'react-native-vector-icons/Icon';
-import {StyleProp} from 'react-native';
+import {Pressable, PressableProps, ViewStyle} from 'react-native';
 
 type IconButtonProps = PressableProps & {
   icon: IconProps['name'];
