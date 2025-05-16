@@ -346,4 +346,8 @@ If the gap is caused by SafeAreaView, adjust the padding using edges:
 
 use TouchableOpacity in headerLeft, headerRight icon
 
-[persist-state-redux-persist-redux-toolkit-react](https://blog.logrocket.com/persist-state-redux-persist-redux-toolkit-react/)
+[redux-persist-with-react-native-using-redux-toolkit](https://medium.com/@sisongqolosi/redux-persist-with-react-native-using-redux-toolkit-2908cbb9c870)
+
+[@react-native/babel-preset instead of module:metro-react-native-babel-preset](https://github.com/facebook/react-native/issues/50683)
+
+[path-aliases](https://reactnative.dev/docs/typescript#using-custom-path-aliases-with-typescript)
