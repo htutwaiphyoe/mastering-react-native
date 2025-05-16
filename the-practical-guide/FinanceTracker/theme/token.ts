@@ -10,3 +10,11 @@ export const fonts = {
   black: 'Lato-Black',
   blackItalic: 'Lato-BlackItalic',
 };
+
+export const colors = {
+  primary: '#04d38c',
+  secondary: '#ebe08c',
+  background: '#0d0d0d',
+  white: '#ffffff',
+  black: '#000000',
+};
