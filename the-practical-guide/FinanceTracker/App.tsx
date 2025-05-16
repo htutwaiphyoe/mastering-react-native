@@ -1,0 +1,15 @@
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {Navigation} from '@/navigation';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+
+function App() {
+  return (
+    <GestureHandlerRootView>
+      <SafeAreaProvider>
+        <Navigation />
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
+  );
+}
+
+export default App;
