@@ -18,7 +18,7 @@ export type RecipeList = Recipe[];
 export type ScreenNavigationParams = {
   Home: undefined;
   Favorite: undefined;
-  Recipe: {data: Recipe};
+  Recipe: {id: string};
 };
 
 export type ScreenNavigationProps = NativeStackNavigationProp<

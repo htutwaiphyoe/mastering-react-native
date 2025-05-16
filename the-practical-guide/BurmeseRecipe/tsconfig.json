@@ -14,7 +14,8 @@
       "@/constants/*": ["./constants/*"],
       "@/styles/*": ["./styles/*"],
       "@/theme/*": ["./theme/*"],
-      "@/types/*": ["./types/*"]
+      "@/types/*": ["./types/*"],
+      "@/store/*": ["./store/*"]
     }
   }
 }

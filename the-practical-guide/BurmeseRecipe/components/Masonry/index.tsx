@@ -5,9 +5,19 @@ type MasonryProps<T> = {
   data: T[];
   cols: number;
   renderItem: (item: {item: T; i: number}) => React.ReactNode;
+  renderEmpty?: () => React.ReactNode;
 };
 
-export function Masonry<T>({cols, data, renderItem}: MasonryProps<T>) {
+export function Masonry<T>({
+  cols,
+  data,
+  renderItem,
+  renderEmpty,
+}: MasonryProps<T>) {
+  if (data.length === 0) {
+    return renderEmpty?.();
+  }
+
   return (
     <ScrollView
       style={styles.masonryContainer}

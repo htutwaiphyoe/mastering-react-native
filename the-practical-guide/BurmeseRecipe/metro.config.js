@@ -29,6 +29,7 @@ const config = (async () => {
         '@/constants': __dirname + '/constants',
         '@/navigation': __dirname + '/navigation',
         '@/types': __dirname + '/types',
+        '@/store': __dirname + '/store',
       },
     },
   };

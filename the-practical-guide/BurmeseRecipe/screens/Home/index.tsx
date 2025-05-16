@@ -3,8 +3,7 @@ import {TouchableOpacity, TouchableOpacityProps, View} from 'react-native';
 import {userType} from '@/constants';
 import {Tabs} from '@/components/Tabs';
 import {Masonry} from '@/components/Masonry';
-import {ScreenNavigationProps} from '@/types';
-import recipes from '@/assets/data/recipes.json';
+import {Recipe as TRecipe, ScreenNavigationProps} from '@/types';
 import {FilterInput} from '@/components/FilterInput';
 import {useNavigation} from '@react-navigation/native';
 import {Recipe, RecipeProps} from '@/components/Recipe';
@@ -12,6 +11,8 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {useLayoutEffect, useState} from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {colors} from '@/theme';
+import {useSelector} from 'react-redux';
+import {State} from '@/store';
 
 const favoriteButton = ({onPress}: TouchableOpacityProps) => (
   <TouchableOpacity onPress={onPress} style={styles.icon}>
@@ -23,6 +24,7 @@ export function HomeScreen() {
   const navigation = useNavigation<ScreenNavigationProps>();
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const recipes = useSelector<State, TRecipe[]>(state => state.recipes.recipes);
 
   useLayoutEffect(() => {
     navigation.setOptions({

@@ -1,19 +1,23 @@
-import {useState} from 'react';
 import {styles} from './styles';
 import {Alert, Image, View} from 'react-native';
 import {IconButton} from '@/components/IconButton';
 import {ScrollView, Text} from 'react-native-gesture-handler';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import {ScreenNavigationProps, RecipeScreenRouteParam} from '@/types';
+import {ScreenNavigationProps, RecipeScreenRouteParam, Recipe} from '@/types';
+import {useDispatch, useSelector} from 'react-redux';
+import {Dispatch, State} from '@/store';
+import {favoriteRecipe, unfavoriteRecipe} from '@/store/slices/recipe';
 
 export function RecipeScreen() {
+  const dispatch = useDispatch<Dispatch>();
   const {params} = useRoute<RecipeScreenRouteParam>();
   const {goBack} = useNavigation<ScreenNavigationProps>();
-  const [favorite, setFavorite] = useState(params.data.Favorite);
+  const recipes = useSelector<State, Recipe[]>(state => state.recipes.recipes);
+  const recipe = recipes.find(item => item.Guid === params.id)!;
 
   const toggleFavorite = () => {
-    if (!favorite) {
-      return setFavorite((prev): boolean => !prev);
+    if (!recipe?.Favorite) {
+      return dispatch(favoriteRecipe(recipe?.Guid));
     }
     Alert.alert(
       'Remove from Favorite',
@@ -26,7 +30,7 @@ export function RecipeScreen() {
         {
           text: 'Remove',
           style: 'destructive',
-          onPress: () => setFavorite((prev): boolean => !prev),
+          onPress: () => dispatch(unfavoriteRecipe(recipe.Guid)),
         },
       ],
     );
@@ -38,23 +42,21 @@ export function RecipeScreen() {
       <IconButton
         onPress={toggleFavorite}
         style={styles.favoriteButton}
-        icon={favorite ? 'heart' : 'hearto'}
+        icon={recipe.Favorite ? 'heart' : 'hearto'}
       />
       <ScrollView style={styles.screen} showsVerticalScrollIndicator={false}>
         <View style={styles.imageContainer}>
-          <Image source={{uri: params.data.Image}} style={styles.image} />
+          <Image source={{uri: recipe.Image}} style={styles.image} />
         </View>
         <View style={styles.content}>
-          <Text style={styles.title}>{params.data.Name}</Text>
+          <Text style={styles.title}>{recipe.Name}</Text>
           <View>
             <Text style={styles.subtitle}>ပါဝင်ပစ္စည်းများ</Text>
-            <Text style={styles.description}>{params.data.Ingredients}</Text>
+            <Text style={styles.description}>{recipe.Ingredients}</Text>
           </View>
           <View>
             <Text style={styles.subtitle}>ချက်ပြုတ်ပုံအဆင့်ဆင့်</Text>
-            <Text style={styles.description}>
-              {params.data.CookingInstructions}
-            </Text>
+            <Text style={styles.description}>{recipe.CookingInstructions}</Text>
           </View>
         </View>
       </ScrollView>

@@ -15,7 +15,7 @@ export function Recipe({data}: RecipeProps) {
     <Pressable
       key={data.Guid}
       style={({pressed}) => [styles.recipe, pressed && styles.recipePressed]}
-      onPress={() => navigation.navigate('Recipe', {data})}>
+      onPress={() => navigation.navigate('Recipe', {id: data.Guid})}>
       <View style={styles.recipeImageContainer}>
         <Image style={styles.recipeImage} source={{uri: data.Image}} />
       </View>

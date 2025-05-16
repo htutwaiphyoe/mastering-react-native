@@ -345,3 +345,5 @@ If the gap is caused by SafeAreaView, adjust the padding using edges:
 [headerRight issue](https://github.com/react-navigation/react-navigation/issues/12274)
 
 use TouchableOpacity in headerLeft, headerRight icon
+
+[persist-state-redux-persist-redux-toolkit-react](https://blog.logrocket.com/persist-state-redux-persist-redux-toolkit-react/)

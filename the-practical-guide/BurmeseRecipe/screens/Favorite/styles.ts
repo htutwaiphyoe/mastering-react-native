@@ -10,4 +10,15 @@ export const styles = StyleSheet.create({
   header: {
     paddingBottom: 20,
   },
+  emptyContainer: {
+    flex: 1,
+    gap: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  emptyText: {
+    fontSize: 16,
+    color: colors.white,
+    textAlign: 'center',
+  },
 });
