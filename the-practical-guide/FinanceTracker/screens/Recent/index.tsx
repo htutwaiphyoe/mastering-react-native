@@ -6,7 +6,7 @@ export function RecentScreen() {
   return (
     <SafeAreaView style={styles.screen}>
       <View>
-        <Text>RecentScreen</Text>
+        <Text style={styles.text}>RecentScreen</Text>
       </View>
     </SafeAreaView>
   );

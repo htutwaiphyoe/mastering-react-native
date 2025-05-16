@@ -1,8 +1,8 @@
-import {HistoryScreen, ManageScreen, RecentScreen} from '@/screens';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {HistoryScreen, ManageScreen, RecentScreen} from '@/screens';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
