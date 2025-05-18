@@ -1,20 +1,17 @@
-import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {Navigation} from '@/navigation';
-import {persistor, store} from '@/store';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {store} from '@/store';
 import {Provider} from 'react-redux';
-import {PersistGate} from 'redux-persist/integration/react';
+import {Navigation} from '@/navigation';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 function App() {
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <GestureHandlerRootView>
-          <SafeAreaProvider>
-            <Navigation />
-          </SafeAreaProvider>
-        </GestureHandlerRootView>
-      </PersistGate>
+      <GestureHandlerRootView>
+        <SafeAreaProvider>
+          <Navigation />
+        </SafeAreaProvider>
+      </GestureHandlerRootView>
     </Provider>
   );
 }

@@ -360,3 +360,17 @@ screenOptions={({ navigation }) => ({
 ```
 
 presentation: "modal" => Screen
+
+textarea input => multiple TextInput
+
+[datetimepicker](https://github.com/react-native-datetimepicker/datetimepicker)
+
+[react-native-date-picker](https://github.com/henninghall/react-native-date-picker)
+
+[react-native-with-react-hook-form-and-zod](https://medium.com/@rutikpanchal121/building-a-robust-form-in-react-native-with-react-hook-form-and-zod-for-validation-7583678970c3)
+
+`autoCorrect` and `autoCapitalize` props in TextInput, disable for email input
+
+use `textAlignVertical: "top"` for `multiline` input
+
+flex: 1 can break multiline input layout
