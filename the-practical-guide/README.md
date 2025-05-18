@@ -384,3 +384,17 @@ flex: 1 can break multiline input layout
 [activityindicator](https://reactnative.dev/docs/activityindicator)
 
 [rnfirebase](http://rnfirebase.io/)
+
+## Authentication
+
+`navigation.replace` for replacing current screen, no back button
+
+conditional rendering different screen or navigation when authenticated
+
+`node.json` => firebase url
+
+firebase protected API rules => read => auth.uid != null => url?auth=token
+
+use AsyncStorage for storing token in device storage
+
+[async-storage](https://github.com/react-native-async-storage/async-storage)
