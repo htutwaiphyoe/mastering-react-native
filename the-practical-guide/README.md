@@ -346,6 +346,8 @@ If the gap is caused by SafeAreaView, adjust the padding using edges:
 
 use TouchableOpacity in headerLeft, headerRight icon
 
+## Global State Management
+
 [redux-persist-with-react-native-using-redux-toolkit](https://medium.com/@sisongqolosi/redux-persist-with-react-native-using-redux-toolkit-2908cbb9c870)
 
 [@react-native/babel-preset instead of module:metro-react-native-babel-preset](https://github.com/facebook/react-native/issues/50683)
@@ -361,6 +363,8 @@ screenOptions={({ navigation }) => ({
 
 presentation: "modal" => Screen
 
+## Form Handling
+
 textarea input => multiple TextInput
 
 [datetimepicker](https://github.com/react-native-datetimepicker/datetimepicker)
@@ -374,3 +378,9 @@ textarea input => multiple TextInput
 use `textAlignVertical: "top"` for `multiline` input
 
 flex: 1 can break multiline input layout
+
+## API Integration
+
+[activityindicator](https://reactnative.dev/docs/activityindicator)
+
+[rnfirebase](http://rnfirebase.io/)
