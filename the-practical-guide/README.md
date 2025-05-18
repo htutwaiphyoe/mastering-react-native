@@ -351,3 +351,12 @@ use TouchableOpacity in headerLeft, headerRight icon
 [@react-native/babel-preset instead of module:metro-react-native-babel-preset](https://github.com/facebook/react-native/issues/50683)
 
 [path-aliases](https://reactnative.dev/docs/typescript#using-custom-path-aliases-with-typescript)
+
+```ts
+screenOptions={({ navigation }) => ({
+  ...,
+  headerRight: ({ tintColor }) => (...),
+})}
+```
+
+presentation: "modal" => Screen

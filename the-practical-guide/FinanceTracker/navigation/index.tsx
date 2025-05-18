@@ -54,7 +54,13 @@ function StackNavigation() {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="Manage" component={ManageScreen} />
+      <Stack.Screen
+        name="Manage"
+        component={ManageScreen}
+        options={{
+          presentation: 'fullScreenModal',
+        }}
+      />
     </Stack.Navigator>
   );
 }
