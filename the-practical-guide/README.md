@@ -414,3 +414,7 @@ iOS simulator cannot provide camera module
 use uri of image object from camera module
 
 set style for image to render correctly
+
+geo-location need user permission for device location
+
+location module returns coordinate object
