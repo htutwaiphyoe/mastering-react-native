@@ -410,3 +410,7 @@ check permission status for different status handling
 only open camera if user is granted
 
 iOS simulator cannot provide camera module
+
+use uri of image object from camera module
+
+set style for image to render correctly
