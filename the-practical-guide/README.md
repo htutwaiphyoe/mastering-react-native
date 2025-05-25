@@ -418,3 +418,11 @@ set style for image to render correctly
 geo-location need user permission for device location
 
 location module returns coordinate object
+
+google map needs credit card for billing account
+
+use map static api
+
+MapView for rendering map
+
+stack screens are created on top of each others, components are not removed and will not rendered, use useIsFocused hook to check it is current screen or not
