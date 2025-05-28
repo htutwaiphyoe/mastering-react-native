@@ -426,3 +426,11 @@ use map static api
 MapView for rendering map
 
 stack screens are created on top of each others, components are not removed and will not rendered, use useIsFocused hook to check it is current screen or not
+
+Expo => development (Expo Go) => production (EAS)
+
+Expo => Expo Management Workflow => Expo Bare Workflow
+
+Expo eject => Expo Management Workflow to Expo Bare Workflow
+
+CLI => no expo package
