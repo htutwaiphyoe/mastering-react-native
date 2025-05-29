@@ -434,3 +434,19 @@ Expo => Expo Management Workflow => Expo Bare Workflow
 Expo eject => Expo Management Workflow to Expo Bare Workflow
 
 CLI => no expo package
+
+Expo Cloud Service
+
+Permission, App name and identifier, env variable, icons and splash screen
+
+EAS => Expo Application Services
+
+App version & build version
+
+apk => installable file on android
+
+aab => google play store
+
+app => installable file on iOS
+
+ipa => apple play store
