@@ -450,3 +450,9 @@ aab => google play store
 app => installable file on iOS
 
 ipa => apple play store
+
+local notification => same device by app => scheduled notification
+
+notification => send => display => action
+
+push notification => device to device or server to device => programmatic notification => handle push notification server by Google or Apple
