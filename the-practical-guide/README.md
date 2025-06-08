@@ -400,3 +400,13 @@ use AsyncStorage for storing token in device storage
 [async-storage](https://github.com/react-native-async-storage/async-storage)
 
 permission for device access
+
+camera config such as edit, aspect ration, quality
+
+iOS need to manage manually for camera access
+
+check permission status for different status handling
+
+only open camera if user is granted
+
+iOS simulator cannot provide camera module
