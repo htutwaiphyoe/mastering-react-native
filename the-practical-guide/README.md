@@ -398,3 +398,5 @@ firebase protected API rules => read => auth.uid != null => url?auth=token
 use AsyncStorage for storing token in device storage
 
 [async-storage](https://github.com/react-native-async-storage/async-storage)
+
+permission for device access
