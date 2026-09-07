@@ -12,6 +12,7 @@
 		2E1E1115D9A44B75985D45D3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		99400FF6304E962F00A6CAB4 /* RCTNativeDeviceModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 99400FF5304E962F00A6CAB4 /* RCTNativeDeviceModel.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-NativeModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeModule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = NativeModule/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NativeModule/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		99400FF4304E962F00A6CAB4 /* RCTNativeDeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNativeDeviceModel.h; sourceTree = "<group>"; };
+		99400FF5304E962F00A6CAB4 /* RCTNativeDeviceModel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTNativeDeviceModel.mm; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -70,6 +73,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				99400FF3304E960600A6CAB4 /* NativeDeviceModel */,
 				13B07FAE1A68108700A75B9A /* NativeModule */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -87,6 +91,15 @@
 				13B07F961A680F5B00A75B9A /* NativeModule.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		99400FF3304E960600A6CAB4 /* NativeDeviceModel */ = {
+			isa = PBXGroup;
+			children = (
+				99400FF4304E962F00A6CAB4 /* RCTNativeDeviceModel.h */,
+				99400FF5304E962F00A6CAB4 /* RCTNativeDeviceModel.mm */,
+			);
+			path = NativeDeviceModel;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -131,7 +144,7 @@
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 2630;
 					};
 				};
 			};
@@ -191,9 +204,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NativeModule/Pods-NativeModule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NativeModule/Pods-NativeModule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -230,9 +247,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NativeModule/Pods-NativeModule-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NativeModule/Pods-NativeModule-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -246,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99400FF6304E962F00A6CAB4 /* RCTNativeDeviceModel.mm in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

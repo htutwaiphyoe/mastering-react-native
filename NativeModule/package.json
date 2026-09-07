@@ -45,6 +45,11 @@
     "jsSrcsDir": "specs",
     "android": {
       "javaPackageName": "com.nativemodule"
+    },
+    "ios": {
+      "modulesProvider": {
+        "NativeDeviceModel": "RCTNativeDeviceModel"
+      }
     }
   }
 }
