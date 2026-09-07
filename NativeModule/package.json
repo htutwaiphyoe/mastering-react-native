@@ -40,7 +40,7 @@
     "node": ">= 22.11.0"
   },
   "codegenConfig": {
-    "name": "NativeDeviceModelSpecs",
+    "name": "AppSpecs",
     "type": "modules",
     "jsSrcsDir": "specs",
     "android": {
@@ -48,7 +48,8 @@
     },
     "ios": {
       "modulesProvider": {
-        "NativeDeviceModel": "RCTNativeDeviceModel"
+        "NativeDeviceModel": "RCTNativeDeviceModel",
+        "NativeBatteryStatus": "RCTNativeBatteryStatus"
       }
     }
   }
