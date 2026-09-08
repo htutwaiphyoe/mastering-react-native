@@ -13,6 +13,7 @@
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		99400FF6304E962F00A6CAB4 /* RCTNativeDeviceModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 99400FF5304E962F00A6CAB4 /* RCTNativeDeviceModel.mm */; };
+		99400FF9304EF78500A6CAB4 /* RCTNativeBatteryStatus.mm in Sources */ = {isa = PBXBuildFile; fileRef = 99400FF8304EF78500A6CAB4 /* RCTNativeBatteryStatus.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NativeModule/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99400FF4304E962F00A6CAB4 /* RCTNativeDeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNativeDeviceModel.h; sourceTree = "<group>"; };
 		99400FF5304E962F00A6CAB4 /* RCTNativeDeviceModel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTNativeDeviceModel.mm; sourceTree = "<group>"; };
+		99400FF7304EF78500A6CAB4 /* RCTNativeBatteryStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNativeBatteryStatus.h; sourceTree = "<group>"; };
+		99400FF8304EF78500A6CAB4 /* RCTNativeBatteryStatus.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTNativeBatteryStatus.mm; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -96,6 +99,8 @@
 		99400FF3304E960600A6CAB4 /* NativeDeviceModel */ = {
 			isa = PBXGroup;
 			children = (
+				99400FF7304EF78500A6CAB4 /* RCTNativeBatteryStatus.h */,
+				99400FF8304EF78500A6CAB4 /* RCTNativeBatteryStatus.mm */,
 				99400FF4304E962F00A6CAB4 /* RCTNativeDeviceModel.h */,
 				99400FF5304E962F00A6CAB4 /* RCTNativeDeviceModel.mm */,
 			);
@@ -204,9 +209,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NativeModule/Pods-NativeModule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NativeModule/Pods-NativeModule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -243,9 +252,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NativeModule/Pods-NativeModule-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NativeModule/Pods-NativeModule-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -261,6 +274,7 @@
 			files = (
 				99400FF6304E962F00A6CAB4 /* RCTNativeDeviceModel.mm in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
+				99400FF9304EF78500A6CAB4 /* RCTNativeBatteryStatus.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
