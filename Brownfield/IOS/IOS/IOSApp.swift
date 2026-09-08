@@ -6,9 +6,18 @@
 //
 
 import SwiftUI
+import ReactNativeReact
 
 @main
 struct IOSApp: App {
+    init() {
+        ReactNativeBrownfield.shared.bundle = ReactNativeBundle
+        
+        ReactNativeBrownfield.shared.startReactNative {
+                print("React Native bundle loaded")
+            }
+        }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

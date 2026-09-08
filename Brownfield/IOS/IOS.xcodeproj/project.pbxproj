@@ -6,8 +6,44 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		99401017304FB74800A6CAB4 /* ReactNativeDependencies.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99401012304FB74800A6CAB4 /* ReactNativeDependencies.xcframework */; };
+		99401018304FB74800A6CAB4 /* ReactNativeDependencies.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99401012304FB74800A6CAB4 /* ReactNativeDependencies.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		99401019304FB74800A6CAB4 /* ReactBrownfield.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99401013304FB74800A6CAB4 /* ReactBrownfield.xcframework */; };
+		9940101A304FB74800A6CAB4 /* ReactBrownfield.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99401013304FB74800A6CAB4 /* ReactBrownfield.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9940101B304FB74800A6CAB4 /* hermesvm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99401014304FB74800A6CAB4 /* hermesvm.xcframework */; };
+		9940101C304FB74800A6CAB4 /* hermesvm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99401014304FB74800A6CAB4 /* hermesvm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9940101D304FB74800A6CAB4 /* ReactNativeReact.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99401015304FB74800A6CAB4 /* ReactNativeReact.xcframework */; };
+		9940101E304FB74800A6CAB4 /* ReactNativeReact.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99401015304FB74800A6CAB4 /* ReactNativeReact.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9940101F304FB74800A6CAB4 /* React.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99401016304FB74800A6CAB4 /* React.xcframework */; };
+		99401020304FB74800A6CAB4 /* React.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99401016304FB74800A6CAB4 /* React.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		99401021304FB74800A6CAB4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9940101E304FB74800A6CAB4 /* ReactNativeReact.xcframework in Embed Frameworks */,
+				9940101C304FB74800A6CAB4 /* hermesvm.xcframework in Embed Frameworks */,
+				99401018304FB74800A6CAB4 /* ReactNativeDependencies.xcframework in Embed Frameworks */,
+				9940101A304FB74800A6CAB4 /* ReactBrownfield.xcframework in Embed Frameworks */,
+				99401020304FB74800A6CAB4 /* React.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		99401003304FB44100A6CAB4 /* IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99401012304FB74800A6CAB4 /* ReactNativeDependencies.xcframework */ = {isa = PBXFileReference; expectedSignature = "SelfSigned:BEEAE960B121B398BB228BD547298BD461DFFFD862BD3AD794A38F6D426F6741"; lastKnownFileType = wrapper.xcframework; name = ReactNativeDependencies.xcframework; path = ../ReactNative/.rock/cache/ios/package/ReactNativeDependencies.xcframework; sourceTree = "<group>"; };
+		99401013304FB74800A6CAB4 /* ReactBrownfield.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReactBrownfield.xcframework; path = ../ReactNative/.rock/cache/ios/package/ReactBrownfield.xcframework; sourceTree = "<group>"; };
+		99401014304FB74800A6CAB4 /* hermesvm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = hermesvm.xcframework; path = ../ReactNative/.rock/cache/ios/package/hermesvm.xcframework; sourceTree = "<group>"; };
+		99401015304FB74800A6CAB4 /* ReactNativeReact.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReactNativeReact.xcframework; path = ../ReactNative/.rock/cache/ios/package/ReactNativeReact.xcframework; sourceTree = "<group>"; };
+		99401016304FB74800A6CAB4 /* React.xcframework */ = {isa = PBXFileReference; expectedSignature = "SelfSigned:BEEAE960B121B398BB228BD547298BD461DFFFD862BD3AD794A38F6D426F6741"; lastKnownFileType = wrapper.xcframework; name = React.xcframework; path = ../ReactNative/.rock/cache/ios/package/React.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +59,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9940101D304FB74800A6CAB4 /* ReactNativeReact.xcframework in Frameworks */,
+				9940101B304FB74800A6CAB4 /* hermesvm.xcframework in Frameworks */,
+				99401017304FB74800A6CAB4 /* ReactNativeDependencies.xcframework in Frameworks */,
+				99401019304FB74800A6CAB4 /* ReactBrownfield.xcframework in Frameworks */,
+				9940101F304FB74800A6CAB4 /* React.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				99401005304FB44100A6CAB4 /* IOS */,
+				99401011304FB74800A6CAB4 /* Frameworks */,
 				99401004304FB44100A6CAB4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +87,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		99401011304FB74800A6CAB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99401014304FB74800A6CAB4 /* hermesvm.xcframework */,
+				99401016304FB74800A6CAB4 /* React.xcframework */,
+				99401013304FB74800A6CAB4 /* ReactBrownfield.xcframework */,
+				99401012304FB74800A6CAB4 /* ReactNativeDependencies.xcframework */,
+				99401015304FB74800A6CAB4 /* ReactNativeReact.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -55,6 +109,7 @@
 				99400FFF304FB44100A6CAB4 /* Sources */,
 				99401000304FB44100A6CAB4 /* Frameworks */,
 				99401001304FB44100A6CAB4 /* Resources */,
+				99401021304FB74800A6CAB4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

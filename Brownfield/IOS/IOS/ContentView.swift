@@ -6,19 +6,24 @@
 //
 
 import SwiftUI
+import ReactNativeReact
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+        NavigationStack {
+            VStack(spacing: 16) {
 
-#Preview {
-    ContentView()
+                Text("This screen is native SwiftUI")
+
+                NavigationLink("Open React Native") {
+                    // Must match AppRegistry.registerComponent in index.js.
+                    ReactNativeView(moduleName: "ReactNative")
+                        .navigationTitle("React Native")
+                        .navigationBarTitleDisplayMode(.inline)
+                }
+                .buttonStyle(.borderedProminent)
+            }
+            .padding()
+        }
+    }
 }
